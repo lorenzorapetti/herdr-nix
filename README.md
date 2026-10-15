@@ -1,0 +1,114 @@
+# herdr-nix
+
+[herdr](https://herdr.dev) plugins packaged for Nix, the way nixpkgs packages
+`vimPlugins`, plus a Home Manager module that registers them.
+
+## Usage
+
+```nix
+{
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    home-manager.url = "github:nix-community/home-manager";
+    herdr-nix = {
+      url = "github:lorenzorapetti/herdr-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+  };
+}
+```
+
+Import the module into your Home Manager configuration:
+
+```nix
+{
+  imports = [inputs.herdr-nix.homeModules.default];
+}
+```
+
+Then enable herdr and pick plugins:
+
+```nix
+{herdrPlugins, ...}: {
+  programs.herdr.enable = true;
+  programs.herdr.plugins = [herdrPlugins.herdr-worktrunk];
+}
+```
+
+`programs.herdr.enable`, `package` and `settings` come from Home Manager itself.
+This flake adds only `programs.herdr.plugins`.
+
+The module passes `herdrPlugins` to every module as an argument. You can also
+use `overlays.default` and get it as `pkgs.herdrPlugins`, or reach it directly
+at `inputs.herdr-nix.legacyPackages.${system}.herdrPlugins`.
+
+### How registration works
+
+Activation diffs `herdr plugin list` against the configured plugins:
+
+- Configured plugins that aren't registered yet are linked with
+  `herdr plugin link`. This works even when no herdr server is running.
+- Plugins registered from the nix store that are no longer configured are
+  unlinked. Unlinking needs a running server, so if none is running it is
+  retried on the next activation.
+- Plugins installed any other way, for example with `herdr plugin install`,
+  are left alone.
+
+## Binary cache
+
+CI builds every plugin for x86_64-linux and aarch64-linux and pushes the
+results to [Cachix](https://herdr-nix.cachix.org):
+
+```nix
+nix.settings = {
+  extra-substituters = ["https://herdr-nix.cachix.org"];
+  extra-trusted-public-keys = ["herdr-nix.cachix.org-1:UpdsQYx39PK0PToKQaa2EFq19Lsjs1M9Ho+X7VNt9gs="];
+};
+```
+
+## Plugins
+
+| Attribute         | Plugin id   | Upstream                                                                          |
+| ----------------- | ----------- | --------------------------------------------------------------------------------- |
+| `herdr-worktrunk` | `worktrunk` | [devashish2203/herdr-worktrunk](https://github.com/devashish2203/herdr-worktrunk) |
+
+Plugin ids are what you reference in herdr's config, for example
+`command = "worktrunk.open"` in a `plugin_action` key binding.
+
+## Adding a plugin
+
+Add a file to `pkgs/herdr-plugins/` and list it in
+`pkgs/herdr-plugins/default.nix`:
+
+```nix
+{
+  mkHerdrPlugin,
+  fetchFromGitHub,
+  bash,
+  jq,
+}:
+mkHerdrPlugin rec {
+  pname = "herdr-example";
+  version = "1.0.0";
+  src = fetchFromGitHub { /* ... */ };
+
+  # Put first on PATH for every interpreter in `wrapCommands`.
+  runtimeInputs = [bash jq];
+  # Bare interpreters in the manifest's `command = ["…", …]` to wrap.
+  wrapCommands = ["bash"];
+}
+```
+
+Plugin manifests run bare interpreters through whatever PATH the herdr server
+happens to have. `mkHerdrPlugin` rewrites each `command = ["bash", …]` to a
+wrapper that puts `runtimeInputs` first on PATH. Your own PATH is still
+appended after them.
+
+## Development
+
+```sh
+nix build .#herdr-worktrunk
+nix flake check   # builds every plugin and tests activation against a real herdr
+nix fmt
+```
