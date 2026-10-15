@@ -10,6 +10,8 @@ lib.makeScope newScope (self: {
 
   herdr-bar = self.callPackage ./herdr-bar.nix {};
 
+  herdr-file-viewer = self.callPackage ./herdr-file-viewer.nix {};
+
   herdr-reviewr = self.callPackage ./herdr-reviewr.nix {};
 
   herdr-worktrunk = self.callPackage ./herdr-worktrunk.nix {};
