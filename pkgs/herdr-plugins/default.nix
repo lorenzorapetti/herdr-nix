@@ -8,6 +8,8 @@ lib.makeScope newScope (self: {
   herdr-annotate-full = self.callPackage ./herdr-annotate.nix {variant = "full";};
   herdr-annotate-lite = self.callPackage ./herdr-annotate.nix {variant = "lite";};
 
+  herdr-auto-title = self.callPackage ./herdr-auto-title.nix {};
+
   herdr-bar = self.callPackage ./herdr-bar.nix {};
 
   herdr-file-viewer = self.callPackage ./herdr-file-viewer.nix {};
