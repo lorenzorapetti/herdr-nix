@@ -19,6 +19,10 @@
     map (plugin: "${toString plugin}/herdr-plugin.toml") cfg.plugins
   );
 
+  # Ids of the configured herdrPlugins packages; herdr keeps one registration
+  # per id, so two variants of a plugin can't be enabled together.
+  pluginIds = lib.concatMap (p: lib.optional (p ? pluginId) p.pluginId) cfg.plugins;
+
   # Plugin ids registered from the nix store that are no longer configured.
   stalePluginIds = ''
     .result.plugins[]?
@@ -59,7 +63,13 @@ in {
     # generation registered.
     (lib.mkIf cfg.enable {
       assertions =
-        map (plugin: {
+        [
+          {
+            assertion = lib.allUnique pluginIds;
+            message = "programs.herdr.plugins: plugin ids must be unique, got ${toString pluginIds}.";
+          }
+        ]
+        ++ map (plugin: {
           assertion = builtins.pathExists "${plugin}/herdr-plugin.toml";
           message = "programs.herdr.plugins: ${toString plugin} has no herdr-plugin.toml at its top level.";
         })
