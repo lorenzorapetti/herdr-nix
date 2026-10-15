@@ -29,10 +29,16 @@
       exec ${command} "$@"
     '';
 
-  substitutions = lib.concatMapStringsSep " " (command:
-    "--replace-fail ${lib.escapeShellArg ''command = ["${command}",''} "
-    + lib.escapeShellArg ''command = ["${wrapper command}",'')
-  wrapCommands;
+  # Swap the leading program of every `command = ["<command>", …]` array, with
+  # any whitespace (including newlines) after the bracket, and fail when a
+  # listed command never appears so stale `wrapCommands` don't go unnoticed.
+  substitutions =
+    lib.concatMapStrings (command: ''
+      sed -z -E -i 's#(command[[:space:]]*=[[:space:]]*\[[[:space:]]*)"${command}"#\1"${wrapper command}"#g' $out/herdr-plugin.toml
+      grep -qF '"${wrapper command}"' $out/herdr-plugin.toml \
+        || { echo 'mkHerdrPlugin: no `command = ["${command}", …]` in herdr-plugin.toml' >&2; exit 1; }
+    '')
+    wrapCommands;
 
   manifest = lib.importTOML "${src}/herdr-plugin.toml";
 in
@@ -53,7 +59,7 @@ in
             else "cp -r ${lib.escapeShellArgs files} $out/"
           }
           ${lib.optionalString (wrapCommands != []) ''
-            substituteInPlace $out/herdr-plugin.toml ${substitutions}
+            ${substitutions}
           ''}
 
           runHook postInstall

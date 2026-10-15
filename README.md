@@ -73,6 +73,7 @@ nix.settings = {
 | ----------------- | ----------- | --------------------------------------------------------------------------------- |
 | `herdr-annotate-full` | `annotate` | [plannotator/herdr-annotate](https://github.com/plannotator/herdr-annotate), with plannotator-tui document review |
 | `herdr-annotate-lite` | `annotate` | [plannotator/herdr-annotate](https://github.com/plannotator/herdr-annotate), terminal annotations only |
+| `herdr-bar` | `herdr-bar` | [jeffarese/herdr-bar](https://github.com/jeffarese/herdr-bar) |
 | `herdr-reviewr` | `persiyanov.reviewr` | [persiyanov/herdr-reviewr](https://github.com/persiyanov/herdr-reviewr) |
 | `herdr-worktrunk` | `worktrunk` | [devashish2203/herdr-worktrunk](https://github.com/devashish2203/herdr-worktrunk) |
 
