@@ -19,6 +19,9 @@
   wrapCommands ? ["bash"],
   # Top-level entries of `src` to install; null installs everything.
   files ? null,
+  # File the plugin reads from its herdr config dir ($HERDR_PLUGIN_CONFIG_DIR),
+  # e.g. "config.toml"; the Home Manager module writes `pluginSettings` to it.
+  settingsFile ? null,
   meta ? {},
   passthru ? {},
   ...
@@ -43,7 +46,7 @@
   manifest = lib.importTOML "${src}/herdr-plugin.toml";
 in
   stdenvNoCC.mkDerivation (
-    removeAttrs args ["runtimeInputs" "wrapCommands" "files"]
+    removeAttrs args ["runtimeInputs" "wrapCommands" "files" "settingsFile"]
     // {
       dontConfigure = args.dontConfigure or true;
       dontBuild = args.dontBuild or true;
@@ -68,6 +71,7 @@ in
       passthru =
         {
           pluginId = manifest.id;
+          inherit settingsFile;
         }
         // passthru;
 

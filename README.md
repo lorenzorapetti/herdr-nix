@@ -37,7 +37,36 @@ Then enable herdr and pick plugins:
 ```
 
 `programs.herdr.enable`, `package` and `settings` come from Home Manager itself.
-This flake adds only `programs.herdr.plugins`.
+This flake adds `programs.herdr.plugins` and `programs.herdr.pluginSettings`.
+
+### Configuring plugins
+
+Each plugin reads its own config file from its herdr config dir
+(`herdr plugin config-dir <id>`). Set `pluginSettings.<id>` as a Nix attrset,
+and the module writes it in the file name and format that plugin expects:
+
+```nix
+{herdrPlugins, ...}: {
+  programs.herdr.plugins = with herdrPlugins; [herdr-bar herdr-worktrunk];
+  programs.herdr.pluginSettings = {
+    herdr-bar = {                      # -> herdr-bar/config.json
+      mouse = true;
+      colors.accent = "#89b4fa";
+    };
+    worktrunk.show_remote_branches = true; # -> worktrunk/config.toml
+  };
+}
+```
+
+Keys are plugin ids, not attribute names (see the table below). Only plugins
+listed in `programs.herdr.plugins` whose package declares a `settingsFile` can
+be configured this way. For any other plugin, write the file yourself:
+
+```nix
+xdg.configFile."herdr/plugins/config/<id>/config.toml".text = ''
+  key = "value"
+'';
+```
 
 The module passes `herdrPlugins` to every module as an argument. You can also
 use `overlays.default` and get it as `pkgs.herdrPlugins`, or reach it directly
@@ -105,6 +134,8 @@ mkHerdrPlugin rec {
   runtimeInputs = [bash jq];
   # Bare interpreters in the manifest's `command = ["…", …]` to wrap.
   wrapCommands = ["bash"];
+  # File read from $HERDR_PLUGIN_CONFIG_DIR, if any; enables pluginSettings.
+  settingsFile = "config.toml";
 }
 ```
 

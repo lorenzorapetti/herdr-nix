@@ -50,6 +50,8 @@ in
     # Every manifest command runs bin/herdr-reviewr directly.
     wrapCommands = [];
 
+    settingsFile = "config.toml";
+
     postInstall = ''
       find $out -mindepth 1 -maxdepth 1 \
         ! -name herdr-plugin.toml ! -name herdr ! -name LICENSE ! -name README.md \

@@ -50,6 +50,8 @@ in
 
     runtimeInputs = [bash coreutils];
 
+    settingsFile = "config.toml";
+
     postInstall = ''
       find $out -mindepth 1 -maxdepth 1 \
         ! -name herdr-plugin.toml ! -name scripts ! -name LICENSE ! -name README.md \

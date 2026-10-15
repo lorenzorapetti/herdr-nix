@@ -23,6 +23,8 @@ mkHerdrPlugin rec {
   wrapCommands = ["sh" "python3"];
   runtimeInputs = [coreutils procps python3];
 
+  settingsFile = "config.json";
+
   doCheck = true;
   nativeCheckInputs = [procps python3];
   checkPhase = ''

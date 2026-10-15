@@ -30,6 +30,8 @@ mkHerdrPlugin rec {
 
   runtimeInputs = [bash coreutils fzf gawk git gnused jq worktrunk];
 
+  settingsFile = "config.toml";
+
   meta = {
     homepage = "https://github.com/devashish2203/herdr-worktrunk";
     license = lib.licenses.mit;
