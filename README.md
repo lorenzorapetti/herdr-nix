@@ -104,6 +104,7 @@ nix.settings = {
 | `herdr-annotate-lite` | `annotate` | [plannotator/herdr-annotate](https://github.com/plannotator/herdr-annotate), terminal annotations only |
 | `herdr-bar` | `herdr-bar` | [jeffarese/herdr-bar](https://github.com/jeffarese/herdr-bar) |
 | `herdr-file-viewer` | `herdr-file-viewer` | [smarzban/herdr-file-viewer](https://github.com/smarzban/herdr-file-viewer) |
+| `herdr-plus` | `cloudmanic.herdr-plus` | [cloudmanic/herdr-plus](https://github.com/cloudmanic/herdr-plus) |
 | `herdr-reviewr` | `persiyanov.reviewr` | [persiyanov/herdr-reviewr](https://github.com/persiyanov/herdr-reviewr) |
 | `herdr-worktrunk` | `worktrunk` | [devashish2203/herdr-worktrunk](https://github.com/devashish2203/herdr-worktrunk) |
 

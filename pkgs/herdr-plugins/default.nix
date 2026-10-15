@@ -12,6 +12,8 @@ lib.makeScope newScope (self: {
 
   herdr-file-viewer = self.callPackage ./herdr-file-viewer.nix {};
 
+  herdr-plus = self.callPackage ./herdr-plus.nix {};
+
   herdr-reviewr = self.callPackage ./herdr-reviewr.nix {};
 
   herdr-worktrunk = self.callPackage ./herdr-worktrunk.nix {};
