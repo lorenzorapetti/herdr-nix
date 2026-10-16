@@ -105,6 +105,7 @@ nix.settings = {
 | `herdr-auto-title` | `herdr.auto-title` | [kryptamine/herdr-auto-title](https://github.com/kryptamine/herdr-auto-title) |
 | `herdr-bar` | `herdr-bar` | [jeffarese/herdr-bar](https://github.com/jeffarese/herdr-bar) |
 | `herdr-file-viewer` | `herdr-file-viewer` | [smarzban/herdr-file-viewer](https://github.com/smarzban/herdr-file-viewer) |
+| `herdr-last-workspace` | `third774.last-workspace` | [third774/herdr-last-workspace](https://github.com/third774/herdr-last-workspace) |
 | `herdr-plus` | `cloudmanic.herdr-plus` | [cloudmanic/herdr-plus](https://github.com/cloudmanic/herdr-plus) |
 | `herdr-reviewr` | `persiyanov.reviewr` | [persiyanov/herdr-reviewr](https://github.com/persiyanov/herdr-reviewr) |
 | `herdr-worktrunk` | `worktrunk` | [devashish2203/herdr-worktrunk](https://github.com/devashish2203/herdr-worktrunk) |
