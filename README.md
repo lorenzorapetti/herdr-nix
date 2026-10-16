@@ -108,6 +108,7 @@ nix.settings = {
 | `herdr-last-workspace` | `third774.last-workspace` | [third774/herdr-last-workspace](https://github.com/third774/herdr-last-workspace) |
 | `herdr-plus` | `cloudmanic.herdr-plus` | [cloudmanic/herdr-plus](https://github.com/cloudmanic/herdr-plus) |
 | `herdr-reviewr` | `persiyanov.reviewr` | [persiyanov/herdr-reviewr](https://github.com/persiyanov/herdr-reviewr) |
+| `herdr-worktree-from-linear` | `tdi.worktree-from-linear` | [tdi/herdr-worktree-from-linear](https://github.com/tdi/herdr-worktree-from-linear) |
 | `herdr-worktrunk` | `worktrunk` | [devashish2203/herdr-worktrunk](https://github.com/devashish2203/herdr-worktrunk) |
 
 Both `herdr-annotate` variants register as `annotate`, so enable only one;
