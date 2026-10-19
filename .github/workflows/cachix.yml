@@ -10,17 +10,37 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  matrix:
+    runs-on: ubuntu-26.04
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: cachix/install-nix-action@v31
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+
+      # One job per plugin and system, so builds run on separate runners.
+      - name: Generate build matrix
+        id: matrix
+        run: |
+          nix eval --json .#packages.x86_64-linux --apply builtins.attrNames \
+            | jq -c '{include: [
+                .[] as $attr
+                | {system: "x86_64-linux", runner: "ubuntu-26.04"},
+                  {system: "aarch64-linux", runner: "ubuntu-26.04-arm"}
+                | . + {attr: $attr}
+              ]}' \
+            | sed 's/^/matrix=/' >> "$GITHUB_OUTPUT"
+
   build:
+    needs: matrix
     strategy:
       fail-fast: false
-      matrix:
-        include:
-          - system: x86_64-linux
-            runner: ubuntu-26.04
-          - system: aarch64-linux
-            runner: ubuntu-26.04-arm
+      matrix: ${{ fromJSON(needs.matrix.outputs.matrix) }}
     runs-on: ${{ matrix.runner }}
-    name: build (${{ matrix.system }})
+    name: ${{ matrix.attr }} (${{ matrix.system }})
     steps:
       - uses: actions/checkout@v7
 
@@ -33,11 +53,33 @@ jobs:
           name: herdr-nix
           authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
 
-      - name: Build plugins
-        run: |
-          nix eval --json .#packages.${{ matrix.system }} --apply builtins.attrNames \
-            | jq -r '.[] | ".#packages.${{ matrix.system }}.\(.)"' \
-            | xargs nix build -L --no-link
+      - name: Build
+        run: nix build -L --no-link .#packages.${{ matrix.system }}.${{ matrix.attr }}
 
+  check:
+    needs: build
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - system: x86_64-linux
+            runner: ubuntu-26.04
+          - system: aarch64-linux
+            runner: ubuntu-26.04-arm
+    runs-on: ${{ matrix.runner }}
+    name: check (${{ matrix.system }})
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: cachix/install-nix-action@v31
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: cachix/cachix-action@v17
+        with:
+          name: herdr-nix
+          authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
+
+      # Plugins are substituted from Cachix; this mostly builds plugins-activation.
       - name: Run checks
         run: nix flake check -L
