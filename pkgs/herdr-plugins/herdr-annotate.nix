@@ -18,8 +18,8 @@ assert lib.assertOneOf "variant" variant ["full" "lite"]; let
   src = fetchFromGitHub {
     owner = "plannotator";
     repo = "herdr-annotate";
-    rev = "ceab050b77bea07bbeabdfda5c138be8c9c5c517";
-    hash = "sha256-Q/HgVn1gEAMMavWDQp8Rmz7R7qK5u0QweLkcpYL+otE=";
+    rev = "c5e565e9bdbb52d152ad15169f38ed8bae31b610";
+    hash = "sha256-qh6vQ4e4ehIuY8bIV6H0uScO6AQySCLDYwHkI24csFQ=";
   };
 
   manifest =
