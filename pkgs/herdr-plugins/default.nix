@@ -51,6 +51,8 @@ lib.makeScope newScope (self: {
 
   herdr-mirror = self.callPackage ./herdr-mirror.nix {};
 
+  herdr-navigator = self.callPackage ./herdr-navigator.nix {};
+
   herdr-plus = self.callPackage ./herdr-plus.nix {};
 
   herdr-reviewr = self.callPackage ./herdr-reviewr.nix {};
