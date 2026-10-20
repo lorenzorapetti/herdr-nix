@@ -57,6 +57,8 @@ lib.makeScope newScope (self: {
 
   herdr-ohmyzsh = self.callPackage ./herdr-ohmyzsh.nix {};
 
+  herdr-pairfob = self.callPackage ./herdr-pairfob.nix {};
+
   herdr-plus = self.callPackage ./herdr-plus.nix {};
 
   herdr-reviewr = self.callPackage ./herdr-reviewr.nix {};
