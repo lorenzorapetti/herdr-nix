@@ -141,6 +141,7 @@ nix.settings = {
 | `herdr-spreader` | `herdr-spreader` | [yuk1ty/herdr-spreader](https://github.com/yuk1ty/herdr-spreader) |
 | `herdr-tab-smart-rename` | `tab-smart-rename` | [iurysza/herdr-tab-smart-rename](https://github.com/iurysza/herdr-tab-smart-rename) |
 | `herdr-telegram-agents` | `permgps.telegram-agents` | [permgps/herdr-telegram-agents](https://github.com/permgps/herdr-telegram-agents) |
+| `herdr-termote` | `lamngockhuong.termote` | [lamngockhuong/termote](https://github.com/lamngockhuong/termote) |
 | `herdr-worktree-from-linear` | `tdi.worktree-from-linear` | [tdi/herdr-worktree-from-linear](https://github.com/tdi/herdr-worktree-from-linear) |
 | `herdr-worktrunk` | `worktrunk` | [devashish2203/herdr-worktrunk](https://github.com/devashish2203/herdr-worktrunk) |
 
