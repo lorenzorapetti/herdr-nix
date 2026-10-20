@@ -6,6 +6,8 @@ lib.makeScope newScope (self: {
   mkHerdrPlugin = self.callPackage ./mk-herdr-plugin.nix {};
   fetchBunDeps = self.callPackage ./fetch-bun-deps.nix {};
 
+  herdr-agent-router = self.callPackage ./herdr-agent-router.nix {};
+
   herdr-annotate-full = self.callPackage ./herdr-annotate.nix {variant = "full";};
   herdr-annotate-lite = self.callPackage ./herdr-annotate.nix {variant = "lite";};
 
