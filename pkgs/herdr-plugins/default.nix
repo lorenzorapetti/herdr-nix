@@ -87,6 +87,8 @@ lib.makeScope newScope (self: {
 
   herdr-termote = self.callPackage ./herdr-termote.nix {};
 
+  herdr-termscope = self.callPackage ./herdr-termscope.nix {};
+
   herdr-worktree-from-linear = self.callPackage ./herdr-worktree-from-linear.nix {};
 
   herdr-worktrunk = self.callPackage ./herdr-worktrunk.nix {};
