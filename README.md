@@ -154,6 +154,19 @@ nix.settings = {
 Both `herdr-annotate` variants register as `annotate`, so enable only one;
 the module asserts on duplicate ids.
 
+Some plugins need a step outside their own directory, which is left to you:
+
+- `herdr-ohmyzsh`: run its "install" action, or add `herdr.plugin.zsh` to
+  Oh My Zsh yourself.
+- `herdr-radar`: run its "configure" and "install-font" actions.
+- `herdr-board`: agents call the `board` CLI; add
+  `herdrPlugins.herdr-board.passthru.herdr-board-bin` to `home.packages`.
+- `herdr-llmtrim`: install [llmtrim](https://github.com/fkiene/llmtrim), the
+  proxy it drives, yourself.
+- `herdr-pairfob`, `herdr-collie`, `herdr-roamgate`: the background service
+  they install runs from the plugin's store path; rerun the start action after
+  an upgrade to move it to the new one.
+
 Plugin ids are what you reference in herdr's config, for example
 `command = "worktrunk.open"` in a `plugin_action` key binding.
 

@@ -15,6 +15,12 @@ match as the template:
 - Plugin whose `[[build]]` hook downloads or compiles a binary:
   `herdr-reviewr.nix`, `herdr-file-viewer.nix` (Rust), `herdr-plus.nix` (Go).
 - Several manifests or variants from one repo: `herdr-annotate.nix`.
+- Manifest in a subdirectory (`pluginRoot`): `herdr-ghzinga.nix`,
+  `herdr-zoetrope.nix`.
+- npm dependencies or a compiled `dist/`: `herdr-heeler.nix`,
+  `herdr-hunk-diff.nix` (`buildNpmPackage`); `bun.lock`:
+  `herdr-tab-smart-rename.nix`, `herdr-collie.nix` (`fetchBunDeps`); pnpm:
+  `herdr-termote.nix`.
 
 ## 1. Inspect upstream
 
@@ -52,7 +58,7 @@ Pinning, also for the update script:
 - Without: `rev = "<full 40-char commit>";` plus a comment saying why, and a
   version from the manifest (`(lib.importTOML "${src}/herdr-plugin.toml").version`).
 - Keep `owner = "...";`, `repo = "...";`, `rev = "...";`, `version = "...";`
-  each on its own line, and name hashes `hash`, `cargoHash` or `vendorHash`.
+  each on its own line, and name hashes `hash`, `cargoHash`, `vendorHash` or `npmDepsHash`.
 
 `mkHerdrPlugin` (see `mk-herdr-plugin.nix`):
 
@@ -78,7 +84,13 @@ symlink it with `lib.getExe` to the path the manifest runs, expose it in
 Tools the binary shells out to (usually `git`) go in with
 `wrapProgram ... --suffix PATH :` so the user's own copy still wins. Skip or fix
 flaky or sandbox-hostile tests with a comment saying why (`checkFlags`,
-`preCheck` with `HOME=$(mktemp -d)`, `git init`, `patchShebangs`).
+`preCheck` with `HOME=$(mktemp -d)`, `git init`, `patchShebangs`). Tests that
+write stub scripts with a `#!/usr/bin/env` shebang at run time need
+`sed "s#/usr/bin/env#$(command -v env)#g"` over the test files first.
+
+Link `node_modules` into the plugin as `<drv>/node_modules`, never as a store
+path of its own: packages find their dependencies in the nearest ancestor
+directory named `node_modules`.
 
 Comments explain why, not what, in the same terse style as the other files.
 
