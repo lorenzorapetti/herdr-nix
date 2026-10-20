@@ -131,6 +131,7 @@ nix.settings = {
 | `herdr-pi-workflows` | `osolmaz.pi-workflows` | [osolmaz/pi-workflows](https://github.com/osolmaz/pi-workflows) |
 | `herdr-plugin-manager` | `ray.plugin-manager` | [speardragon/herdr-plugin-manager](https://github.com/speardragon/herdr-plugin-manager) |
 | `herdr-plus` | `cloudmanic.herdr-plus` | [cloudmanic/herdr-plus](https://github.com/cloudmanic/herdr-plus) |
+| `herdr-projects` | `herdr-projects` | [eliasstravik/herdr-projects](https://github.com/eliasstravik/herdr-projects) |
 | `herdr-reviewr` | `persiyanov.reviewr` | [persiyanov/herdr-reviewr](https://github.com/persiyanov/herdr-reviewr) |
 | `herdr-worktree-from-linear` | `tdi.worktree-from-linear` | [tdi/herdr-worktree-from-linear](https://github.com/tdi/herdr-worktree-from-linear) |
 | `herdr-worktrunk` | `worktrunk` | [devashish2203/herdr-worktrunk](https://github.com/devashish2203/herdr-worktrunk) |
