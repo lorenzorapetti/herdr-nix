@@ -27,6 +27,8 @@ lib.makeScope newScope (self: {
 
   herdr-collie = self.callPackage ./herdr-collie.nix {};
 
+  herdr-crabbox = self.callPackage ./herdr-crabbox.nix {};
+
   herdr-file-viewer = self.callPackage ./herdr-file-viewer.nix {};
 
   herdr-last-workspace = self.callPackage ./herdr-last-workspace.nix {};
