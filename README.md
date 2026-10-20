@@ -149,6 +149,7 @@ nix.settings = {
 | `herdr-web-ui` | `devswha.herdr-web-ui` | [devswha/herdr-web-ui](https://github.com/devswha/herdr-web-ui) |
 | `herdr-worktree-from-linear` | `tdi.worktree-from-linear` | [tdi/herdr-worktree-from-linear](https://github.com/tdi/herdr-worktree-from-linear) |
 | `herdr-worktrunk` | `worktrunk` | [devashish2203/herdr-worktrunk](https://github.com/devashish2203/herdr-worktrunk) |
+| `herdr-zoetrope` | `furkankly.zoetrope` | [furkankly/zoetrope](https://github.com/furkankly/zoetrope) |
 
 Both `herdr-annotate` variants register as `annotate`, so enable only one;
 the module asserts on duplicate ids.

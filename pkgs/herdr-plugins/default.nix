@@ -100,4 +100,6 @@ lib.makeScope newScope (self: {
   herdr-worktree-from-linear = self.callPackage ./herdr-worktree-from-linear.nix {};
 
   herdr-worktrunk = self.callPackage ./herdr-worktrunk.nix {};
+
+  herdr-zoetrope = self.callPackage ./herdr-zoetrope.nix {};
 })
