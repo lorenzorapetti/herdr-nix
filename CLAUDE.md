@@ -20,13 +20,17 @@ the user-facing docs; keep it in sync with changes.
   holding the manifest.
 - `pkgs/herdr-plugins/fetch-bun-deps.nix`: `fetchBunDeps`, a fixed-output
   `bun install` (all platforms) for projects with a `bun.lock`.
+- `pkgs/herdr-plugins/prebuilt-release.nix`: unpacks and autoPatchelfs an
+  upstream release tarball per system (`releaseHashes`, `passthru.releases`),
+  for what can't reasonably be built from source (patched Electron).
 - `modules/home-manager.nix`: adds `programs.herdr.plugins` and
   `programs.herdr.pluginSettings` (written as JSON/TOML/YAML to each plugin's
   `settingsFile`), links/unlinks plugins on activation, asserts on duplicate ids.
 - `checks/plugins-activation.nix`: runs the activation script against a real
   herdr and checks generated settings files.
 - `scripts/update-plugins.sh`: bumps plugins to the latest `vX.Y.Z` tag (or
-  default-branch commit) and refreshes `hash`/`cargoHash`/`vendorHash`/`npmDepsHash`. Run by
+  default-branch commit) and refreshes `hash`/`cargoHash`/`vendorHash`/`npmDepsHash`,
+  plus every system's `passthru.releases` hash. Run by
   `.github/workflows/update.yml`; `cachix.yml` builds and pushes on `main`.
 
 ## Commands

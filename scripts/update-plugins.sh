@@ -60,6 +60,21 @@ refresh_hashes() {
   done
 }
 
+# Prebuilt release tarballs (`passthru.releases`) have a hash per system, and
+# only this system's would be built, so each is prefetched instead.
+refresh_releases() {
+  local file=$1 name=$2 releases url old got
+
+  releases=$(nix eval --json ".#packages.$system.$name.passthru.releases" 2>/dev/null) || return 0
+  while read -r url old; do
+    if ! got=$(nix store prefetch-file --json "$url" | jq -r .hash); then
+      echo "$name: could not fetch $url" >&2
+      return 1
+    fi
+    sed -i "s#\"$old\"#\"$got\"#" "$file"
+  done < <(jq -r '.[] | "\(.url) \(.hash)"' <<<"$releases")
+}
+
 for file in pkgs/herdr-plugins/*.nix; do
   name=$(basename "$file" .nix)
   owner=$(sed -n 's/^ *owner = "\(.*\)";/\1/p' "$file" | head -n1)
@@ -82,7 +97,7 @@ for file in pkgs/herdr-plugins/*.nix; do
   fi
 
   echo "updating $name $old → $new" >&2
-  if ! refresh_hashes "$file" "$name"; then
+  if ! refresh_releases "$file" "$name" || ! refresh_hashes "$file" "$name"; then
     git checkout -- "$file"
     failed+=("$name")
     continue

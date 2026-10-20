@@ -204,7 +204,10 @@ appended after them.
 Set `pluginRoot = "<dir>";` when the manifest isn't at the top of the
 repository; only that directory is installed. For a project with a `bun.lock`,
 `fetchBunDeps { inherit pname version src; hash = …; }` gives its
-`node_modules/`, which nixpkgs has no fetcher for.
+`node_modules/`, which nixpkgs has no fetcher for. For what can't reasonably be
+built from source, `callPackage ./prebuilt-release.nix {}` unpacks a release
+tarball per system and patches it for Nix's loader; `update-plugins.sh`
+refreshes the hash of every system it lists.
 
 ## Development
 
