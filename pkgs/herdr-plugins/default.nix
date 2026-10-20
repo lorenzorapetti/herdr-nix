@@ -49,6 +49,8 @@ lib.makeScope newScope (self: {
 
   herdr-memex = self.callPackage ./herdr-memex.nix {};
 
+  herdr-mirror = self.callPackage ./herdr-mirror.nix {};
+
   herdr-plus = self.callPackage ./herdr-plus.nix {};
 
   herdr-reviewr = self.callPackage ./herdr-reviewr.nix {};
