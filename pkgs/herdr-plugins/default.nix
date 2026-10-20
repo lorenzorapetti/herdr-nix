@@ -31,6 +31,8 @@ lib.makeScope newScope (self: {
 
   herdr-dagr = self.callPackage ./herdr-dagr.nix {};
 
+  herdr-file-annotator = self.callPackage ./herdr-file-annotator.nix {};
+
   herdr-file-viewer = self.callPackage ./herdr-file-viewer.nix {};
 
   herdr-last-workspace = self.callPackage ./herdr-last-workspace.nix {};

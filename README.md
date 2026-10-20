@@ -114,6 +114,7 @@ nix.settings = {
 | `herdr-collie` | `herdr.collie` | [AltanS/collie](https://github.com/AltanS/collie) |
 | `herdr-crabbox` | `crabbox` | [openclaw/crabbox](https://github.com/openclaw/crabbox) |
 | `herdr-dagr` | `herdr-dagr` | [aemrebarut/herdr-dagr](https://github.com/aemrebarut/herdr-dagr) |
+| `herdr-file-annotator` | `jonasbaeumer.file-annotator` | [JonasBaeumer/herdr-file-annotator](https://github.com/JonasBaeumer/herdr-file-annotator) |
 | `herdr-file-viewer` | `herdr-file-viewer` | [smarzban/herdr-file-viewer](https://github.com/smarzban/herdr-file-viewer) |
 | `herdr-last-workspace` | `third774.last-workspace` | [third774/herdr-last-workspace](https://github.com/third774/herdr-last-workspace) |
 | `herdr-plus` | `cloudmanic.herdr-plus` | [cloudmanic/herdr-plus](https://github.com/cloudmanic/herdr-plus) |
