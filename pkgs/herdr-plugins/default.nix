@@ -59,6 +59,8 @@ lib.makeScope newScope (self: {
 
   herdr-pairfob = self.callPackage ./herdr-pairfob.nix {};
 
+  herdr-pi-workflows = self.callPackage ./herdr-pi-workflows.nix {};
+
   herdr-plus = self.callPackage ./herdr-plus.nix {};
 
   herdr-reviewr = self.callPackage ./herdr-reviewr.nix {};
