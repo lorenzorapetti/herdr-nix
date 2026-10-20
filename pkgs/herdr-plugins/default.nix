@@ -15,6 +15,8 @@ lib.makeScope newScope (self: {
 
   herdr-auto-title = self.callPackage ./herdr-auto-title.nix {};
 
+  herdr-automatic-rename = self.callPackage ./herdr-automatic-rename.nix {};
+
   herdr-bar = self.callPackage ./herdr-bar.nix {};
 
   herdr-file-viewer = self.callPackage ./herdr-file-viewer.nix {};

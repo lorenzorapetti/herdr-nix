@@ -106,6 +106,7 @@ nix.settings = {
 | `herdr-annotate-full` | `annotate` | [plannotator/herdr-annotate](https://github.com/plannotator/herdr-annotate), with plannotator-tui document review |
 | `herdr-annotate-lite` | `annotate` | [plannotator/herdr-annotate](https://github.com/plannotator/herdr-annotate), terminal annotations only |
 | `herdr-auto-title` | `herdr.auto-title` | [kryptamine/herdr-auto-title](https://github.com/kryptamine/herdr-auto-title) |
+| `herdr-automatic-rename` | `herdr-automatic-rename` | [qu8n/herdr-automatic-rename](https://github.com/qu8n/herdr-automatic-rename) |
 | `herdr-bar` | `herdr-bar` | [jeffarese/herdr-bar](https://github.com/jeffarese/herdr-bar) |
 | `herdr-file-viewer` | `herdr-file-viewer` | [smarzban/herdr-file-viewer](https://github.com/smarzban/herdr-file-viewer) |
 | `herdr-last-workspace` | `third774.last-workspace` | [third774/herdr-last-workspace](https://github.com/third774/herdr-last-workspace) |
