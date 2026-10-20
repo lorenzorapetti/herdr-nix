@@ -83,6 +83,8 @@ lib.makeScope newScope (self: {
 
   herdr-tab-smart-rename = self.callPackage ./herdr-tab-smart-rename.nix {};
 
+  herdr-telegram-agents = self.callPackage ./herdr-telegram-agents.nix {};
+
   herdr-worktree-from-linear = self.callPackage ./herdr-worktree-from-linear.nix {};
 
   herdr-worktrunk = self.callPackage ./herdr-worktrunk.nix {};
