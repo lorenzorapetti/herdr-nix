@@ -61,6 +61,8 @@ lib.makeScope newScope (self: {
 
   herdr-pi-workflows = self.callPackage ./herdr-pi-workflows.nix {};
 
+  herdr-plugin-manager = self.callPackage ./herdr-plugin-manager.nix {};
+
   herdr-plus = self.callPackage ./herdr-plus.nix {};
 
   herdr-reviewr = self.callPackage ./herdr-reviewr.nix {};
