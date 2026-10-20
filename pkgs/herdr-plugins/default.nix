@@ -89,6 +89,8 @@ lib.makeScope newScope (self: {
 
   herdr-telegram-agents = self.callPackage ./herdr-telegram-agents.nix {};
 
+  herdr-terminal-browser = self.callPackage ./herdr-terminal-browser.nix {};
+
   herdr-termote = self.callPackage ./herdr-termote.nix {};
 
   herdr-termscope = self.callPackage ./herdr-termscope.nix {};
