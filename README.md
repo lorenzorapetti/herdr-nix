@@ -124,6 +124,7 @@ nix.settings = {
 | `herdr-llmtrim` | `llmtrim.proxy` | [fkiene/llmtrim-herdr](https://github.com/fkiene/llmtrim-herdr) |
 | `herdr-memex` | `nicosuave.memex` | [nicosuave/memex](https://github.com/nicosuave/memex) |
 | `herdr-mirror` | `mirror` | [nikok6/herdr-mirror](https://github.com/nikok6/herdr-mirror) |
+| `herdr-mobile-relay` | `herdr-mobile-relay.events` | [0cv/herdr-mobile-relay](https://github.com/0cv/herdr-mobile-relay) |
 | `herdr-navigator` | `herdr-navigator` | [thanhdat77/herdr-navigator](https://github.com/thanhdat77/herdr-navigator) |
 | `herdr-nvim` | `chmarax.herdr-nvim` | [ChmaraX/herdr-nvim](https://github.com/ChmaraX/herdr-nvim) |
 | `herdr-ohmyzsh` | `ohmyzsh.shell` | [robbyrussell/herdr-ohmyzsh](https://github.com/robbyrussell/herdr-ohmyzsh) |

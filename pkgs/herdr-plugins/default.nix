@@ -51,6 +51,8 @@ lib.makeScope newScope (self: {
 
   herdr-mirror = self.callPackage ./herdr-mirror.nix {};
 
+  herdr-mobile-relay = self.callPackage ./herdr-mobile-relay.nix {};
+
   herdr-navigator = self.callPackage ./herdr-navigator.nix {};
 
   herdr-nvim = self.callPackage ./herdr-nvim.nix {};
