@@ -93,6 +93,8 @@ lib.makeScope newScope (self: {
 
   herdr-ttt = self.callPackage ./herdr-ttt.nix {};
 
+  herdr-vim-navigation = self.callPackage ./herdr-vim-navigation.nix {};
+
   herdr-worktree-from-linear = self.callPackage ./herdr-worktree-from-linear.nix {};
 
   herdr-worktrunk = self.callPackage ./herdr-worktrunk.nix {};
