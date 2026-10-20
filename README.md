@@ -144,6 +144,7 @@ nix.settings = {
 | `herdr-tab-smart-rename` | `tab-smart-rename` | [iurysza/herdr-tab-smart-rename](https://github.com/iurysza/herdr-tab-smart-rename) |
 | `herdr-telegram-agents` | `permgps.telegram-agents` | [permgps/herdr-telegram-agents](https://github.com/permgps/herdr-telegram-agents) |
 | `herdr-terminal-browser` | `zenbu-labs.terminal-browser` | [zenbu-labs/terminal-browser](https://github.com/zenbu-labs/terminal-browser) |
+| `herdr-terminal-code` | `zenbu-labs.tode` | [zenbu-labs/terminal-code](https://github.com/zenbu-labs/terminal-code) |
 | `herdr-termote` | `lamngockhuong.termote` | [lamngockhuong/termote](https://github.com/lamngockhuong/termote) |
 | `herdr-termscope` | `termscope` | [iurysza/termscope](https://github.com/iurysza/termscope) |
 | `herdr-tsk` | `herdr-tsk` | [smarzban/tsk](https://github.com/smarzban/tsk) |
