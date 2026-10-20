@@ -43,7 +43,8 @@ This flake adds `programs.herdr.plugins` and `programs.herdr.pluginSettings`.
 
 Each plugin reads its own config file from its herdr config dir
 (`herdr plugin config-dir <id>`). Set `pluginSettings.<id>` as a Nix attrset,
-and the module writes it in the file name and format that plugin expects:
+and the module writes it in the file name and format (JSON, TOML or YAML)
+that plugin expects:
 
 ```nix
 {herdrPlugins, ...}: {
@@ -98,8 +99,8 @@ nix.settings = {
 
 ## Plugins
 
-| Attribute         | Plugin id   | Upstream                                                                          |
-| ----------------- | ----------- | --------------------------------------------------------------------------------- |
+| Attribute | Plugin id | Upstream |
+| --- | --- | --- |
 | `herdr-annotate-full` | `annotate` | [plannotator/herdr-annotate](https://github.com/plannotator/herdr-annotate), with plannotator-tui document review |
 | `herdr-annotate-lite` | `annotate` | [plannotator/herdr-annotate](https://github.com/plannotator/herdr-annotate), terminal annotations only |
 | `herdr-auto-title` | `herdr.auto-title` | [kryptamine/herdr-auto-title](https://github.com/kryptamine/herdr-auto-title) |
@@ -147,6 +148,11 @@ Plugin manifests run bare interpreters through whatever PATH the herdr server
 happens to have. `mkHerdrPlugin` rewrites each `command = ["bash", …]` to a
 wrapper that puts `runtimeInputs` first on PATH. Your own PATH is still
 appended after them.
+
+Set `pluginRoot = "<dir>";` when the manifest isn't at the top of the
+repository; only that directory is installed. For a project with a `bun.lock`,
+`fetchBunDeps { inherit pname version src; hash = …; }` gives its
+`node_modules/`, which nixpkgs has no fetcher for.
 
 ## Development
 

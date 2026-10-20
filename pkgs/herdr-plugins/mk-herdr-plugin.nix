@@ -15,6 +15,9 @@
   pname,
   version,
   src,
+  # Directory of `src` holding herdr-plugin.toml, when it isn't the top level;
+  # only that directory is installed.
+  pluginRoot ? null,
   runtimeInputs ? [],
   wrapCommands ? ["bash"],
   # Top-level entries of `src` to install; null installs everything.
@@ -43,10 +46,13 @@
     '')
     wrapCommands;
 
-  manifest = lib.importTOML "${src}/herdr-plugin.toml";
+  manifest = lib.importTOML "${src}/${lib.optionalString (pluginRoot != null) "${pluginRoot}/"}herdr-plugin.toml";
 in
   stdenvNoCC.mkDerivation (
-    removeAttrs args ["runtimeInputs" "wrapCommands" "files" "settingsFile"]
+    removeAttrs args ["pluginRoot" "runtimeInputs" "wrapCommands" "files" "settingsFile"]
+    // lib.optionalAttrs (pluginRoot != null) {
+      sourceRoot = args.sourceRoot or "${src.name}/${pluginRoot}";
+    }
     // {
       dontConfigure = args.dontConfigure or true;
       dontBuild = args.dontBuild or true;

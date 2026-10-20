@@ -34,6 +34,8 @@
   settingsFormats = {
     json = pkgs.formats.json {};
     toml = pkgs.formats.toml {};
+    yaml = pkgs.formats.yaml {};
+    yml = pkgs.formats.yaml {};
   };
 
   settingsFormat = file: settingsFormats.${lib.last (lib.splitString "." file)};

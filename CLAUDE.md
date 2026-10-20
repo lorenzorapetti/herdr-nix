@@ -16,14 +16,17 @@ the user-facing docs; keep it in sync with changes.
   `herdr-plugin.toml` at the top, rewrites bare interpreters in manifest
   `command = [...]` arrays (`wrapCommands`) to wrappers putting
   `runtimeInputs` first on PATH, and exposes `passthru.pluginId` (manifest
-  `id`) and `passthru.settingsFile`.
+  `id`) and `passthru.settingsFile`. `pluginRoot` installs a subdirectory
+  holding the manifest.
+- `pkgs/herdr-plugins/fetch-bun-deps.nix`: `fetchBunDeps`, a fixed-output
+  `bun install` (all platforms) for projects with a `bun.lock`.
 - `modules/home-manager.nix`: adds `programs.herdr.plugins` and
-  `programs.herdr.pluginSettings` (written as JSON/TOML to each plugin's
+  `programs.herdr.pluginSettings` (written as JSON/TOML/YAML to each plugin's
   `settingsFile`), links/unlinks plugins on activation, asserts on duplicate ids.
 - `checks/plugins-activation.nix`: runs the activation script against a real
   herdr and checks generated settings files.
 - `scripts/update-plugins.sh`: bumps plugins to the latest `vX.Y.Z` tag (or
-  default-branch commit) and refreshes `hash`/`cargoHash`/`vendorHash`. Run by
+  default-branch commit) and refreshes `hash`/`cargoHash`/`vendorHash`/`npmDepsHash`. Run by
   `.github/workflows/update.yml`; `cachix.yml` builds and pushes on `main`.
 
 ## Commands

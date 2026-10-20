@@ -39,7 +39,7 @@ refresh_hashes() {
     sed -i "s#\"$old\"#\"$placeholder\"#" "$file"
     placeholders+=("$placeholder")
     i=$((i + 1))
-  done < <(grep -oE '(hash|cargoHash|vendorHash) = "sha256-[^"]+"' "$file" | grep -oE 'sha256-[^"]+')
+  done < <(grep -oE '(hash|cargoHash|vendorHash|npmDepsHash) = "sha256-[^"]+"' "$file" | grep -oE 'sha256-[^"]+')
 
   mapfile -t attrs < <(grep -xE "$name(-.+)?" <<<"$packages")
   attrs=("${attrs[@]/#/.#packages.$system.}")
