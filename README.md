@@ -144,6 +144,7 @@ nix.settings = {
 | `herdr-termote` | `lamngockhuong.termote` | [lamngockhuong/termote](https://github.com/lamngockhuong/termote) |
 | `herdr-termscope` | `termscope` | [iurysza/termscope](https://github.com/iurysza/termscope) |
 | `herdr-tsk` | `herdr-tsk` | [smarzban/tsk](https://github.com/smarzban/tsk) |
+| `herdr-ttt` | `ttt.editor` | [eugenioenko/ttt](https://github.com/eugenioenko/ttt) |
 | `herdr-worktree-from-linear` | `tdi.worktree-from-linear` | [tdi/herdr-worktree-from-linear](https://github.com/tdi/herdr-worktree-from-linear) |
 | `herdr-worktrunk` | `worktrunk` | [devashish2203/herdr-worktrunk](https://github.com/devashish2203/herdr-worktrunk) |
 

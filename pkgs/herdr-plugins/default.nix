@@ -91,6 +91,8 @@ lib.makeScope newScope (self: {
 
   herdr-tsk = self.callPackage ./herdr-tsk.nix {};
 
+  herdr-ttt = self.callPackage ./herdr-ttt.nix {};
+
   herdr-worktree-from-linear = self.callPackage ./herdr-worktree-from-linear.nix {};
 
   herdr-worktrunk = self.callPackage ./herdr-worktrunk.nix {};
