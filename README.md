@@ -136,6 +136,7 @@ nix.settings = {
 | `herdr-remote` | `herdr-remote.relay` | [dcolinmorgan/herdr-remote](https://github.com/dcolinmorgan/herdr-remote) |
 | `herdr-reviewr` | `persiyanov.reviewr` | [persiyanov/herdr-reviewr](https://github.com/persiyanov/herdr-reviewr) |
 | `herdr-roamgate` | `roamgate` | [powerfooI/roamgate](https://github.com/powerfooI/roamgate) |
+| `herdr-sidebar` | `herdr-sidebar` | [alexarthurs/herdr-sidebar](https://github.com/alexarthurs/herdr-sidebar) |
 | `herdr-worktree-from-linear` | `tdi.worktree-from-linear` | [tdi/herdr-worktree-from-linear](https://github.com/tdi/herdr-worktree-from-linear) |
 | `herdr-worktrunk` | `worktrunk` | [devashish2203/herdr-worktrunk](https://github.com/devashish2203/herdr-worktrunk) |
 
