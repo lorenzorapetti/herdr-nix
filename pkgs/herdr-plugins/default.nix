@@ -39,6 +39,8 @@ lib.makeScope newScope (self: {
 
   herdr-heeler = self.callPackage ./herdr-heeler.nix {};
 
+  herdr-hunk-diff = self.callPackage ./herdr-hunk-diff.nix {};
+
   herdr-last-workspace = self.callPackage ./herdr-last-workspace.nix {};
 
   herdr-plus = self.callPackage ./herdr-plus.nix {};

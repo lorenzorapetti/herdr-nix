@@ -118,6 +118,7 @@ nix.settings = {
 | `herdr-file-viewer` | `herdr-file-viewer` | [smarzban/herdr-file-viewer](https://github.com/smarzban/herdr-file-viewer) |
 | `herdr-ghzinga` | `dutifuldev.ghzinga` | [osolmaz/ghzinga](https://github.com/osolmaz/ghzinga) |
 | `herdr-heeler` | `heeler` | [ZingerLittleBee/Heeler](https://github.com/ZingerLittleBee/Heeler) |
+| `herdr-hunk-diff` | `jhochenbaum.hunkdiff` | [jhochenbaum/herdr-hunk-diff](https://github.com/jhochenbaum/herdr-hunk-diff) |
 | `herdr-last-workspace` | `third774.last-workspace` | [third774/herdr-last-workspace](https://github.com/third774/herdr-last-workspace) |
 | `herdr-plus` | `cloudmanic.herdr-plus` | [cloudmanic/herdr-plus](https://github.com/cloudmanic/herdr-plus) |
 | `herdr-reviewr` | `persiyanov.reviewr` | [persiyanov/herdr-reviewr](https://github.com/persiyanov/herdr-reviewr) |
