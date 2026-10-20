@@ -17,10 +17,11 @@
         };
         programs.herdr = {
           enable = true;
-          plugins = [herdrPlugins.herdr-worktrunk herdrPlugins.herdr-bar];
+          plugins = [herdrPlugins.herdr-worktrunk herdrPlugins.herdr-bar herdrPlugins.herdr-spreader];
           pluginSettings = {
             worktrunk.picker_placement = "popup";
             herdr-bar.colors.accent = "#89b4fa";
+            herdr-spreader.layouts.default.tabs = [{name = "main";}];
           };
         };
       })
@@ -33,11 +34,13 @@
   activation = pkgs.writeText "herdr-plugins-activation" config.home.activation.herdrPlugins.data;
   settingsFile = path: config.xdg.configFile."herdr/plugins/config/${path}".source;
 in
-  pkgs.runCommand "herdr-plugins-activation-check" {nativeBuildInputs = [pkgs.jq];} ''
+  pkgs.runCommand "herdr-plugins-activation-check" {nativeBuildInputs = [pkgs.jq pkgs.yq-go];} ''
     grep -qxF 'picker_placement = "popup"' ${settingsFile "worktrunk/config.toml"} \
       || { echo "unexpected worktrunk config.toml:"; cat ${settingsFile "worktrunk/config.toml"}; exit 1; }
     [ "$(jq -r .colors.accent ${settingsFile "herdr-bar/config.json"})" = "#89b4fa" ] \
       || { echo "unexpected herdr-bar config.json:"; cat ${settingsFile "herdr-bar/config.json"}; exit 1; }
+    [ "$(yq '.layouts.default.tabs[0].name' ${settingsFile "herdr-spreader/config.yaml"})" = main ] \
+      || { echo "unexpected herdr-spreader config.yaml:"; cat ${settingsFile "herdr-spreader/config.yaml"}; exit 1; }
 
     export HOME=$TMPDIR/home XDG_CONFIG_HOME=$TMPDIR/home/.config
     mkdir -p $XDG_CONFIG_HOME
