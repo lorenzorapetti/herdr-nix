@@ -73,6 +73,8 @@ lib.makeScope newScope (self: {
 
   herdr-reviewr = self.callPackage ./herdr-reviewr.nix {};
 
+  herdr-roamgate = self.callPackage ./herdr-roamgate.nix {};
+
   herdr-worktree-from-linear = self.callPackage ./herdr-worktree-from-linear.nix {};
 
   herdr-worktrunk = self.callPackage ./herdr-worktrunk.nix {};
