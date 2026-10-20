@@ -143,6 +143,7 @@ nix.settings = {
 | `herdr-telegram-agents` | `permgps.telegram-agents` | [permgps/herdr-telegram-agents](https://github.com/permgps/herdr-telegram-agents) |
 | `herdr-termote` | `lamngockhuong.termote` | [lamngockhuong/termote](https://github.com/lamngockhuong/termote) |
 | `herdr-termscope` | `termscope` | [iurysza/termscope](https://github.com/iurysza/termscope) |
+| `herdr-tsk` | `herdr-tsk` | [smarzban/tsk](https://github.com/smarzban/tsk) |
 | `herdr-worktree-from-linear` | `tdi.worktree-from-linear` | [tdi/herdr-worktree-from-linear](https://github.com/tdi/herdr-worktree-from-linear) |
 | `herdr-worktrunk` | `worktrunk` | [devashish2203/herdr-worktrunk](https://github.com/devashish2203/herdr-worktrunk) |
 
