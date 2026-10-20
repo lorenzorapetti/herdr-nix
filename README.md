@@ -146,6 +146,7 @@ nix.settings = {
 | `herdr-tsk` | `herdr-tsk` | [smarzban/tsk](https://github.com/smarzban/tsk) |
 | `herdr-ttt` | `ttt.editor` | [eugenioenko/ttt](https://github.com/eugenioenko/ttt) |
 | `herdr-vim-navigation` | `vim-herdr-navigation` | [paulbkim-dev/vim-herdr-navigation](https://github.com/paulbkim-dev/vim-herdr-navigation) |
+| `herdr-web-ui` | `devswha.herdr-web-ui` | [devswha/herdr-web-ui](https://github.com/devswha/herdr-web-ui) |
 | `herdr-worktree-from-linear` | `tdi.worktree-from-linear` | [tdi/herdr-worktree-from-linear](https://github.com/tdi/herdr-worktree-from-linear) |
 | `herdr-worktrunk` | `worktrunk` | [devashish2203/herdr-worktrunk](https://github.com/devashish2203/herdr-worktrunk) |
 

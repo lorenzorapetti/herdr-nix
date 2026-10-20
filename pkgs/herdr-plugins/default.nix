@@ -95,6 +95,8 @@ lib.makeScope newScope (self: {
 
   herdr-vim-navigation = self.callPackage ./herdr-vim-navigation.nix {};
 
+  herdr-web-ui = self.callPackage ./herdr-web-ui.nix {};
+
   herdr-worktree-from-linear = self.callPackage ./herdr-worktree-from-linear.nix {};
 
   herdr-worktrunk = self.callPackage ./herdr-worktrunk.nix {};
