@@ -53,6 +53,8 @@ lib.makeScope newScope (self: {
 
   herdr-navigator = self.callPackage ./herdr-navigator.nix {};
 
+  herdr-nvim = self.callPackage ./herdr-nvim.nix {};
+
   herdr-plus = self.callPackage ./herdr-plus.nix {};
 
   herdr-reviewr = self.callPackage ./herdr-reviewr.nix {};
