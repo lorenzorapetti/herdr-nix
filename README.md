@@ -167,9 +167,17 @@ Some plugins need a step outside their own directory, which is left to you:
   `herdrPlugins.herdr-board.passthru.herdr-board-bin` to `home.packages`.
 - `herdr-llmtrim`: install [llmtrim](https://github.com/fkiene/llmtrim), the
   proxy it drives, yourself.
-- `herdr-pairfob`, `herdr-collie`, `herdr-roamgate`: the background service
-  they install runs from the plugin's store path; rerun the start action after
-  an upgrade to move it to the new one.
+- `herdr-pairfob`, `herdr-collie`, `herdr-roamgate`, `herdr-mobile-relay`: the
+  background service they install runs from the plugin's store path; rerun the
+  start action after an upgrade to move it to the new one.
+- `herdr-mobile-relay`: the Cloudflare tunnel transports need
+  [cloudflared](https://github.com/cloudflare/cloudflared) on your PATH.
+- `herdr-oh-my-opencode-slim`: the herdr side lives in the OpenCode plugin
+  (set `multiplexer.type` in its config); the herdr plugin itself only
+  registers the name.
+
+`herdr-terminal-browser` and `herdr-terminal-code` run the prebuilt upstream
+releases: both need a patched Electron, which would be a Chromium build.
 
 Plugin ids are what you reference in herdr's config, for example
 `command = "worktrunk.open"` in a `plugin_action` key binding.

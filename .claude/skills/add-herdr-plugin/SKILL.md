@@ -21,6 +21,9 @@ match as the template:
   `herdr-hunk-diff.nix` (`buildNpmPackage`); `bun.lock`:
   `herdr-tab-smart-rename.nix`, `herdr-collie.nix` (`fetchBunDeps`); pnpm:
   `herdr-termote.nix`.
+- Binary that can't reasonably be built from source (prebuilt release,
+  `prebuilt-release.nix`): `herdr-terminal-browser.nix`. Prefer source builds;
+  this is for things like a patched Electron.
 
 ## 1. Inspect upstream
 
