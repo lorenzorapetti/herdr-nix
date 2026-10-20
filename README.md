@@ -102,6 +102,7 @@ nix.settings = {
 | Attribute | Plugin id | Upstream |
 | --- | --- | --- |
 | `herdr-agent-router` | `nidhi-singh02.agent-router` | [nidhi-singh02/agent-router](https://github.com/nidhi-singh02/agent-router) |
+| `herdr-agent-usage` | `usagebar` | [senna-lang/herdr-agent-usage](https://github.com/senna-lang/herdr-agent-usage) |
 | `herdr-annotate-full` | `annotate` | [plannotator/herdr-annotate](https://github.com/plannotator/herdr-annotate), with plannotator-tui document review |
 | `herdr-annotate-lite` | `annotate` | [plannotator/herdr-annotate](https://github.com/plannotator/herdr-annotate), terminal annotations only |
 | `herdr-auto-title` | `herdr.auto-title` | [kryptamine/herdr-auto-title](https://github.com/kryptamine/herdr-auto-title) |

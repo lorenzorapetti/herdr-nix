@@ -8,6 +8,8 @@ lib.makeScope newScope (self: {
 
   herdr-agent-router = self.callPackage ./herdr-agent-router.nix {};
 
+  herdr-agent-usage = self.callPackage ./herdr-agent-usage.nix {};
+
   herdr-annotate-full = self.callPackage ./herdr-annotate.nix {variant = "full";};
   herdr-annotate-lite = self.callPackage ./herdr-annotate.nix {variant = "lite";};
 
