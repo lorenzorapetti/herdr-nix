@@ -133,6 +133,7 @@ nix.settings = {
 | `herdr-plus` | `cloudmanic.herdr-plus` | [cloudmanic/herdr-plus](https://github.com/cloudmanic/herdr-plus) |
 | `herdr-projects` | `herdr-projects` | [eliasstravik/herdr-projects](https://github.com/eliasstravik/herdr-projects) |
 | `herdr-radar` | `hhdebb.herdr-radar` | [hhdebb/herdr-radar](https://github.com/hhdebb/herdr-radar) |
+| `herdr-remote` | `herdr-remote.relay` | [dcolinmorgan/herdr-remote](https://github.com/dcolinmorgan/herdr-remote) |
 | `herdr-reviewr` | `persiyanov.reviewr` | [persiyanov/herdr-reviewr](https://github.com/persiyanov/herdr-reviewr) |
 | `herdr-worktree-from-linear` | `tdi.worktree-from-linear` | [tdi/herdr-worktree-from-linear](https://github.com/tdi/herdr-worktree-from-linear) |
 | `herdr-worktrunk` | `worktrunk` | [devashish2203/herdr-worktrunk](https://github.com/devashish2203/herdr-worktrunk) |
