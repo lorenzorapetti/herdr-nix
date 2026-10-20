@@ -57,6 +57,8 @@ lib.makeScope newScope (self: {
 
   herdr-nvim = self.callPackage ./herdr-nvim.nix {};
 
+  herdr-oh-my-opencode-slim = self.callPackage ./herdr-oh-my-opencode-slim.nix {};
+
   herdr-ohmyzsh = self.callPackage ./herdr-ohmyzsh.nix {};
 
   herdr-pairfob = self.callPackage ./herdr-pairfob.nix {};

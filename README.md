@@ -127,6 +127,7 @@ nix.settings = {
 | `herdr-mobile-relay` | `herdr-mobile-relay.events` | [0cv/herdr-mobile-relay](https://github.com/0cv/herdr-mobile-relay) |
 | `herdr-navigator` | `herdr-navigator` | [thanhdat77/herdr-navigator](https://github.com/thanhdat77/herdr-navigator) |
 | `herdr-nvim` | `chmarax.herdr-nvim` | [ChmaraX/herdr-nvim](https://github.com/ChmaraX/herdr-nvim) |
+| `herdr-oh-my-opencode-slim` | `oh-my-opencode-slim` | [alvinunreal/oh-my-opencode-slim](https://github.com/alvinunreal/oh-my-opencode-slim) |
 | `herdr-ohmyzsh` | `ohmyzsh.shell` | [robbyrussell/herdr-ohmyzsh](https://github.com/robbyrussell/herdr-ohmyzsh) |
 | `herdr-pairfob` | `pairfob` | [arronKler/pairfob](https://github.com/arronKler/pairfob) |
 | `herdr-pi-workflows` | `osolmaz.pi-workflows` | [osolmaz/pi-workflows](https://github.com/osolmaz/pi-workflows) |
