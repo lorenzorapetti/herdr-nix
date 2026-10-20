@@ -116,6 +116,7 @@ nix.settings = {
 | `herdr-dagr` | `herdr-dagr` | [aemrebarut/herdr-dagr](https://github.com/aemrebarut/herdr-dagr) |
 | `herdr-file-annotator` | `jonasbaeumer.file-annotator` | [JonasBaeumer/herdr-file-annotator](https://github.com/JonasBaeumer/herdr-file-annotator) |
 | `herdr-file-viewer` | `herdr-file-viewer` | [smarzban/herdr-file-viewer](https://github.com/smarzban/herdr-file-viewer) |
+| `herdr-ghzinga` | `dutifuldev.ghzinga` | [osolmaz/ghzinga](https://github.com/osolmaz/ghzinga) |
 | `herdr-last-workspace` | `third774.last-workspace` | [third774/herdr-last-workspace](https://github.com/third774/herdr-last-workspace) |
 | `herdr-plus` | `cloudmanic.herdr-plus` | [cloudmanic/herdr-plus](https://github.com/cloudmanic/herdr-plus) |
 | `herdr-reviewr` | `persiyanov.reviewr` | [persiyanov/herdr-reviewr](https://github.com/persiyanov/herdr-reviewr) |
