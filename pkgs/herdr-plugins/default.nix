@@ -37,6 +37,8 @@ lib.makeScope newScope (self: {
 
   herdr-ghzinga = self.callPackage ./herdr-ghzinga.nix {};
 
+  herdr-heeler = self.callPackage ./herdr-heeler.nix {};
+
   herdr-last-workspace = self.callPackage ./herdr-last-workspace.nix {};
 
   herdr-plus = self.callPackage ./herdr-plus.nix {};
