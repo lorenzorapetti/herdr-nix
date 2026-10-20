@@ -77,6 +77,8 @@ lib.makeScope newScope (self: {
 
   herdr-sidebar = self.callPackage ./herdr-sidebar.nix {};
 
+  herdr-splits-nvim = self.callPackage ./herdr-splits-nvim.nix {};
+
   herdr-worktree-from-linear = self.callPackage ./herdr-worktree-from-linear.nix {};
 
   herdr-worktrunk = self.callPackage ./herdr-worktrunk.nix {};

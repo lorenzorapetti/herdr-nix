@@ -137,6 +137,7 @@ nix.settings = {
 | `herdr-reviewr` | `persiyanov.reviewr` | [persiyanov/herdr-reviewr](https://github.com/persiyanov/herdr-reviewr) |
 | `herdr-roamgate` | `roamgate` | [powerfooI/roamgate](https://github.com/powerfooI/roamgate) |
 | `herdr-sidebar` | `herdr-sidebar` | [alexarthurs/herdr-sidebar](https://github.com/alexarthurs/herdr-sidebar) |
+| `herdr-splits-nvim` | `herdr-splits` | [lmilojevicc/herdr-splits.nvim](https://github.com/lmilojevicc/herdr-splits.nvim) |
 | `herdr-worktree-from-linear` | `tdi.worktree-from-linear` | [tdi/herdr-worktree-from-linear](https://github.com/tdi/herdr-worktree-from-linear) |
 | `herdr-worktrunk` | `worktrunk` | [devashish2203/herdr-worktrunk](https://github.com/devashish2203/herdr-worktrunk) |
 
