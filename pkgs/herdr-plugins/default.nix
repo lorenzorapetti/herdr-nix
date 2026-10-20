@@ -81,6 +81,8 @@ lib.makeScope newScope (self: {
 
   herdr-spreader = self.callPackage ./herdr-spreader.nix {};
 
+  herdr-tab-smart-rename = self.callPackage ./herdr-tab-smart-rename.nix {};
+
   herdr-worktree-from-linear = self.callPackage ./herdr-worktree-from-linear.nix {};
 
   herdr-worktrunk = self.callPackage ./herdr-worktrunk.nix {};

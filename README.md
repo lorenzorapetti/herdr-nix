@@ -139,6 +139,7 @@ nix.settings = {
 | `herdr-sidebar` | `herdr-sidebar` | [alexarthurs/herdr-sidebar](https://github.com/alexarthurs/herdr-sidebar) |
 | `herdr-splits-nvim` | `herdr-splits` | [lmilojevicc/herdr-splits.nvim](https://github.com/lmilojevicc/herdr-splits.nvim) |
 | `herdr-spreader` | `herdr-spreader` | [yuk1ty/herdr-spreader](https://github.com/yuk1ty/herdr-spreader) |
+| `herdr-tab-smart-rename` | `tab-smart-rename` | [iurysza/herdr-tab-smart-rename](https://github.com/iurysza/herdr-tab-smart-rename) |
 | `herdr-worktree-from-linear` | `tdi.worktree-from-linear` | [tdi/herdr-worktree-from-linear](https://github.com/tdi/herdr-worktree-from-linear) |
 | `herdr-worktrunk` | `worktrunk` | [devashish2203/herdr-worktrunk](https://github.com/devashish2203/herdr-worktrunk) |
 
