@@ -67,6 +67,8 @@ lib.makeScope newScope (self: {
 
   herdr-projects = self.callPackage ./herdr-projects.nix {};
 
+  herdr-radar = self.callPackage ./herdr-radar.nix {};
+
   herdr-reviewr = self.callPackage ./herdr-reviewr.nix {};
 
   herdr-worktree-from-linear = self.callPackage ./herdr-worktree-from-linear.nix {};
