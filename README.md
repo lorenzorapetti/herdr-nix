@@ -121,6 +121,7 @@ nix.settings = {
 | `herdr-hunk-diff` | `jhochenbaum.hunkdiff` | [jhochenbaum/herdr-hunk-diff](https://github.com/jhochenbaum/herdr-hunk-diff) |
 | `herdr-lantern` | `aigora.lantern` | [aigorahub/herdr-lantern](https://github.com/aigorahub/herdr-lantern) |
 | `herdr-last-workspace` | `third774.last-workspace` | [third774/herdr-last-workspace](https://github.com/third774/herdr-last-workspace) |
+| `herdr-llmtrim` | `llmtrim.proxy` | [fkiene/llmtrim-herdr](https://github.com/fkiene/llmtrim-herdr) |
 | `herdr-plus` | `cloudmanic.herdr-plus` | [cloudmanic/herdr-plus](https://github.com/cloudmanic/herdr-plus) |
 | `herdr-reviewr` | `persiyanov.reviewr` | [persiyanov/herdr-reviewr](https://github.com/persiyanov/herdr-reviewr) |
 | `herdr-worktree-from-linear` | `tdi.worktree-from-linear` | [tdi/herdr-worktree-from-linear](https://github.com/tdi/herdr-worktree-from-linear) |
