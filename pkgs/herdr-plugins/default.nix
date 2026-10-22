@@ -35,6 +35,8 @@ lib.makeScope newScope (self: {
 
   herdr-file-viewer = self.callPackage ./herdr-file-viewer.nix {};
 
+  herdr-focus-notify = self.callPackage ./herdr-focus-notify.nix {};
+
   herdr-ghzinga = self.callPackage ./herdr-ghzinga.nix {};
 
   herdr-heeler = self.callPackage ./herdr-heeler.nix {};

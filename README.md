@@ -116,6 +116,7 @@ nix.settings = {
 | `herdr-dagr` | `herdr-dagr` | [aemrebarut/herdr-dagr](https://github.com/aemrebarut/herdr-dagr) |
 | `herdr-file-annotator` | `jonasbaeumer.file-annotator` | [JonasBaeumer/herdr-file-annotator](https://github.com/JonasBaeumer/herdr-file-annotator) |
 | `herdr-file-viewer` | `herdr-file-viewer` | [smarzban/herdr-file-viewer](https://github.com/smarzban/herdr-file-viewer) |
+| `herdr-focus-notify` | `herdr-focus-notify` | [yankewei/herdr-focus-notify](https://github.com/yankewei/herdr-focus-notify) |
 | `herdr-ghzinga` | `dutifuldev.ghzinga` | [osolmaz/ghzinga](https://github.com/osolmaz/ghzinga) |
 | `herdr-heeler` | `heeler` | [ZingerLittleBee/Heeler](https://github.com/ZingerLittleBee/Heeler) |
 | `herdr-hunk-diff` | `jhochenbaum.hunkdiff` | [jhochenbaum/herdr-hunk-diff](https://github.com/jhochenbaum/herdr-hunk-diff) |
@@ -167,6 +168,8 @@ Some plugins need a step outside their own directory, which is left to you:
   `herdrPlugins.herdr-board.passthru.herdr-board-bin` to `home.packages`.
 - `herdr-llmtrim`: install [llmtrim](https://github.com/fkiene/llmtrim), the
   proxy it drives, yourself.
+- `herdr-focus-notify`: macOS-only at runtime (it shells out to `alerter`);
+  the manifest's `platforms = ["macos"]` makes herdr refuse it elsewhere.
 - `herdr-pairfob`, `herdr-collie`, `herdr-roamgate`, `herdr-mobile-relay`: the
   background service they install runs from the plugin's store path; rerun the
   start action after an upgrade to move it to the new one.
