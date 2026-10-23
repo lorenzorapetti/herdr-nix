@@ -6,13 +6,13 @@
   makeWrapper,
   git,
 }: let
-  version = "0.47.0";
+  version = "0.48.0";
 
   src = fetchFromGitHub {
     owner = "persiyanov";
     repo = "herdr-reviewr";
     rev = "v${version}";
-    hash = "sha256-pu1q3yFVtTd/MdHx4WgEUzyIRzVbqj/XMIMAbRkmvTU=";
+    hash = "sha256-Y1AJHvXiIoIkjC3eU9rIBvBl99lvsQ2RIusNXONu2tY=";
   };
 
   # Upstream downloads the release binary into bin/ from a [[build]] hook,
@@ -20,7 +20,7 @@
   herdr-reviewr-bin = rustPlatform.buildRustPackage {
     pname = "herdr-reviewr-bin";
     inherit version src;
-    cargoHash = "sha256-3G3ZU0a48mD9ZRwjRoKioWJwnZ8Mt6BT5Q9CdqPxdV0=";
+    cargoHash = "sha256-6+GnGBWRwfFMPXoim3p8Q8zoj3MdtK2smxkg7133xMg=";
 
     nativeCheckInputs = [git];
     # Asserts two subprocess runs finish within 5s, which a loaded builder

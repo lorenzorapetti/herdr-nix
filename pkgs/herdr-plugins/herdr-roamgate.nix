@@ -7,19 +7,19 @@
   bun,
   nodejs,
 }: let
-  version = "0.8.6";
+  version = "0.8.9";
 
   src = fetchFromGitHub {
     owner = "powerfooI";
     repo = "roamgate";
     rev = "v${version}";
-    hash = "sha256-8GDvooaPE5af3ScOQ2ni0l7J8e3HF1KJ5Gk9i3IHOlQ=";
+    hash = "sha256-HFOq4Dj2bYD4KYqaNwL76/6YqjmDJpYFlVDT0lPr3As=";
   };
 
   node-modules = fetchBunDeps {
     pname = "roamgate";
     inherit version src;
-    hash = "sha256-d5dohFdW0pbd96kWZxiWv4nyZrYxjMACgYG8+7KjSf0=";
+    hash = "sha256-yH7hSybA51pi1inihpz1x05Nwpxq6GY+kbwpNZ1CGuk=";
   };
 
   # Upstream downloads the release binary into server/ from a [[build]] hook,

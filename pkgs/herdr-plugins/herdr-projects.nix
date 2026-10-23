@@ -11,13 +11,13 @@
   procps,
   util-linux,
 }: let
-  version = "1.2.5";
+  version = "1.2.22";
 
   src = fetchFromGitHub {
     owner = "eliasstravik";
     repo = "herdr-projects";
     rev = "v${version}";
-    hash = "sha256-D4+czTCOQU3X/s2hXB+NBHh5Kxbb334WHYNVoezDLzs=";
+    hash = "sha256-XYphKVGhtDZP9cGlZOuuO0rFXcBavZWFlHRZ+8SBKPk=";
   };
 
   # bin/run.sh downloads the release binary from a [[build]] hook, which
@@ -25,7 +25,7 @@
   herdr-projects-bin = rustPlatform.buildRustPackage {
     pname = "herdr-projects-bin";
     inherit version src;
-    cargoHash = "sha256-a99jbTisfskYHIPHzBDhiOHnAl+NYRKq+fQ3QR6N6ss=";
+    cargoHash = "sha256-roITtwcJ9aezp2M6DZnZfcbzRiAgMCvCMXhRsYBt4RA=";
 
     # Upstream points the linker at its own mold wrapper; Nix's cc wrapper
     # links fine on its own.

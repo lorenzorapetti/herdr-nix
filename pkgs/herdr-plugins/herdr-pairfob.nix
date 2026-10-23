@@ -5,13 +5,13 @@
   buildGoModule,
   coreutils,
 }: let
-  version = "1.4.3";
+  version = "1.4.4";
 
   src = fetchFromGitHub {
     owner = "arronKler";
     repo = "pairfob";
     rev = "v${version}";
-    hash = "sha256-Om6f4Yz7g+fwg3EXTIi1r3rLm/oMnLFiJqqjF2hUZxY=";
+    hash = "sha256-UY9ml7Glx/m/X6lhb5uyw19nVZ8h7t+woKhLcXTO3N4=";
   };
 
   pairfob = buildGoModule {

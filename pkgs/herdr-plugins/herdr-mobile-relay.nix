@@ -14,7 +14,7 @@
   openssl,
   util-linux,
 }: let
-  version = "0.22.10";
+  version = "0.22.12";
   # Stamped into the binary, the manifest and web/version.json; upstream uses
   # the commit, the tag keeps it in step with version bumps.
   revision = "v${version}";
@@ -23,7 +23,7 @@
     owner = "0cv";
     repo = "herdr-mobile-relay";
     rev = "v${version}";
-    hash = "sha256-hw9I7guqG/QMl3TIwWxyvFMVTfEVlE56htNOvzWv9ds=";
+    hash = "sha256-TRQTtKg+F2IBcysDYaiI58Qa2I+UDmWLZSLHYbUsJPY=";
   };
 
   relay = (buildGoModule.override {go = go_1_27;}) {
