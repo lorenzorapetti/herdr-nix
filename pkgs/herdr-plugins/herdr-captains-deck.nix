@@ -12,8 +12,8 @@
   src = fetchFromGitHub {
     owner = "deimantasnork";
     repo = "captains-deck";
-    rev = "058ff8af75b336ffdc8537b92c7e4825025be0f4";
-    hash = "sha256-g6xxOBHqD12IJPgq1BoLB2CitPdc//Ps7RkFP/eNOOU=";
+    rev = "3628cda7f75e2ddf2a65d91a360045c27067ed4b";
+    hash = "sha256-4Eto0ATPsWR5+7vDndDFZcBUqIT1hF8Si/x3aUVGvYg=";
   };
 in
   mkHerdrPlugin {

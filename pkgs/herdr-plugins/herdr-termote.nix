@@ -11,13 +11,13 @@
   pnpmConfigHook,
   coreutils,
 }: let
-  version = "2.4.0";
+  version = "2.8.0";
 
   src = fetchFromGitHub {
     owner = "lamngockhuong";
     repo = "termote";
     rev = "v${version}";
-    hash = "sha256-twXFi9tn/vCx8ma3R/UBSfY2yd2zDG+s9gIjc5qE0J4=";
+    hash = "sha256-ZAMywSGV2kZyN2PyUz8ND4imauLntlyjipu/z6ZOaUE=";
   };
 
   # The web client the server embeds.
@@ -30,7 +30,7 @@
       inherit (finalAttrs) pname version src pnpmWorkspaces;
       pnpm = pnpm_10;
       fetcherVersion = 4;
-      hash = "sha256-WfPgGymuimzYGIwVyJMRjlK3AKusE/6d7Cm5LYyep5U=";
+      hash = "sha256-yLdcEeTX5HBfiyoDjIPbPDjy8VQ4Lh9pkdSRDx61O0w=";
     };
 
     nativeBuildInputs = [nodejs pnpm_10 pnpmConfigHook];
@@ -55,7 +55,7 @@
     pname = "termote";
     inherit version src;
     modRoot = "server";
-    vendorHash = "sha256-wRztIxTkcinzPZTTri4d159HMGaP28TmXjM+/vKTs54=";
+    vendorHash = "sha256-BCoufqV8eSpt1KkYBSnLKcA1HN1n5AXPQ9xoyie7HBE=";
 
     preBuild = ''
       find webui/dist -mindepth 1 ! -name .gitkeep -delete
