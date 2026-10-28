@@ -112,6 +112,7 @@ nix.settings = {
 | `herdr-captains-deck` | `herdr-firstmate-flow` | [deimantasnork/captains-deck](https://github.com/deimantasnork/captains-deck) |
 | `herdr-clauth` | `clauth` | [uwuclxdy/clauth](https://github.com/uwuclxdy/clauth) |
 | `herdr-collie` | `herdr.collie` | [AltanS/collie](https://github.com/AltanS/collie) |
+| `herdr-command-palette` | `jt.command-palette` | [JanTvrdik/herdr-command-palette](https://github.com/JanTvrdik/herdr-command-palette) |
 | `herdr-crabbox` | `crabbox` | [openclaw/crabbox](https://github.com/openclaw/crabbox) |
 | `herdr-dagr` | `herdr-dagr` | [aemrebarut/herdr-dagr](https://github.com/aemrebarut/herdr-dagr) |
 | `herdr-file-annotator` | `jonasbaeumer.file-annotator` | [JonasBaeumer/herdr-file-annotator](https://github.com/JonasBaeumer/herdr-file-annotator) |
