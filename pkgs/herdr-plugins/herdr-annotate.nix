@@ -18,8 +18,8 @@ assert lib.assertOneOf "variant" variant ["full" "lite"]; let
   src = fetchFromGitHub {
     owner = "plannotator";
     repo = "herdr-annotate";
-    rev = "c5e565e9bdbb52d152ad15169f38ed8bae31b610";
-    hash = "sha256-qh6vQ4e4ehIuY8bIV6H0uScO6AQySCLDYwHkI24csFQ=";
+    rev = "a9973b43c1fc90044a9f15755e310e12b8465abb";
+    hash = "sha256-H25wm/TuGho1u4b3ae/hzBMGGlGfcIfe5ywyaKk23gg=";
   };
 
   manifest =
@@ -36,7 +36,7 @@ assert lib.assertOneOf "variant" variant ["full" "lite"]; let
     version = pinnedVersion "herdr-annotate.version";
     inherit src;
     sourceRoot = "${src.name}/rust";
-    cargoHash = "sha256-ReKL4pHo6doBn4XBOr0WbEyrEnoDbnz/wo56QEwYqOg=";
+    cargoHash = "sha256-fNvPTLyUq5x3HmAxm8yxWKT/5o/057lMqsrzVq+NYeA=";
     meta.mainProgram = "herdr-annotate";
   };
 
@@ -47,9 +47,9 @@ assert lib.assertOneOf "variant" variant ["full" "lite"]; let
       owner = "plannotator";
       repo = "plannotator-tui";
       rev = "v${version}";
-      hash = "sha256-oJ+AMl2G9m/hxFJLwiN6CQ9urhyhK0w6VEcbnpUgQv0=";
+      hash = "sha256-z34MwdUBwjXBaF/gw+aNAMMzwSI2yn0Z8UWu19YTkk0=";
     };
-    cargoHash = "sha256-EK3iCT+VJQ/1Sjhdt06nc1pUdo0B6tPBjbjSV9jsRKY=";
+    cargoHash = "sha256-wcgVVU9zhWhf2nPYvJbddkydiQpBA00gejHu/i9fZaU=";
     cargoBuildFlags = ["--package" "plannotator-tui"];
 
     # Some tests write annotation records under the user's data dir.

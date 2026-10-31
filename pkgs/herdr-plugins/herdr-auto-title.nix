@@ -4,13 +4,13 @@
   fetchFromGitHub,
   buildGoModule,
 }: let
-  version = "0.14.0";
+  version = "0.18.0";
 
   src = fetchFromGitHub {
     owner = "kryptamine";
     repo = "herdr-auto-title";
     rev = "v${version}";
-    hash = "sha256-6BK43+a15nI21FaCPGmVjpy+J5ikRdk9J85TS47GvYI=";
+    hash = "sha256-HhzsksVi8e5hT45ZI8SfoqeYXZ8PSchV/XE4MTVDUfk=";
   };
 
   # Upstream's [[build]] step runs `go build` into the plugin directory, which

@@ -11,13 +11,13 @@
   rsync,
   writeShellScript,
 }: let
-  version = "0.78.1";
+  version = "0.80.0";
 
   src = fetchFromGitHub {
     owner = "openclaw";
     repo = "crabbox";
     rev = "v${version}";
-    hash = "sha256-p294anvkTdU+Q1VKStZqZs4SJg/RY8rzJzzYTDkLGPo=";
+    hash = "sha256-2+GbJyHEBy11M0e0WVCRm32Dj8UGEXKA0o0etdZgDyA=";
   };
 
   # A CLI-only build, like `go install`: the release's offline runtime pack is
@@ -25,7 +25,7 @@
   crabbox = buildGoModule {
     pname = "crabbox";
     inherit version src;
-    vendorHash = "sha256-cIPBACn34PRm4m32HUL1BWafkib+fBt9lfpDOYySDfg=";
+    vendorHash = "sha256-L72L2kd6/ISvOr8b4pv1dlurrCAB0bl9vp8RxqUliW4=";
 
     subPackages = ["cmd/crabbox"];
     env.CGO_ENABLED = 0;

@@ -9,13 +9,13 @@
   coreutils,
   nodejs,
 }: let
-  version = "1.23.0";
+  version = "1.25.2";
 
   src = fetchFromGitHub {
     owner = "AltanS";
     repo = "collie";
     rev = "v${version}";
-    hash = "sha256-zN4MmuolOZ0sn19Ik89GgtXKDUTzIcQINK6DqZDpXgo=";
+    hash = "sha256-VhUsdIpJONQy7n3Pd5Qy58GyMrTzDgEg+QuzMFPwvOo=";
   };
 
   node-modules = fetchBunDeps {

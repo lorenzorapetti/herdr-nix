@@ -15,13 +15,13 @@
   onnxruntime,
   openssl,
 }: let
-  version = "0.29.1";
+  version = "0.31.1";
 
   src = fetchFromGitHub {
     owner = "nicosuave";
     repo = "memex";
     rev = "v${version}";
-    hash = "sha256-QmuUUZzc2Lio92d9QbgQbycUKBAgAtwNCzyy+MsYqGI=";
+    hash = "sha256-ygjMBhHuGguiFZKeDMJumMMQli8fyu7AxdM5+gs1N6o=";
   };
 
   # Upstream downloads the release binary into bin/ from a [[build]] hook,
@@ -30,7 +30,7 @@
   memex = rustPlatform.buildRustPackage {
     pname = "memex";
     inherit version src;
-    cargoHash = "sha256-n5T46iwzPg85EEKQ7PnZxKuNMKYoajN6lNguucHBcMk=";
+    cargoHash = "sha256-fB4+DHf5kwDR/178XJMEIff+YsEjUB5VuHc+QW//y3E=";
 
     # Link against Nix's ONNX Runtime instead of downloading one.
     buildNoDefaultFeatures = true;

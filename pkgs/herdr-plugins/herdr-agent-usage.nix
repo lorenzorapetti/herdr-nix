@@ -8,13 +8,13 @@
   curl,
   gawk,
 }: let
-  version = "0.5.22";
+  version = "0.5.23";
 
   src = fetchFromGitHub {
     owner = "senna-lang";
     repo = "herdr-agent-usage";
     rev = "v${version}";
-    hash = "sha256-cRDcEZyTIzEpmr1t73Hl4g3l+MjgA9YUVt6mwgy7zfk=";
+    hash = "sha256-q3KuB11K/8xwcUIcvhX/bhlbdt3invPqHERBLcEjJhk=";
   };
 
   # Upstream's [[build]] step runs `go build` or downloads a release binary into
