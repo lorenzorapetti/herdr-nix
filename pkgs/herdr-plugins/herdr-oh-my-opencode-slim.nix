@@ -5,13 +5,13 @@
 }:
 mkHerdrPlugin rec {
   pname = "herdr-oh-my-opencode-slim";
-  version = "3.0.5";
+  version = "3.0.6";
 
   src = fetchFromGitHub {
     owner = "alvinunreal";
     repo = "oh-my-opencode-slim";
     rev = "v${version}";
-    hash = "sha256-kfMuSUbC5q3EPfxAcPlIkF13mgOQy0LjkCUWBmedoxA=";
+    hash = "sha256-aJ1NPwqwOLwQHmLF4robDSxVq9om1vqGbP/92F9C/zA=";
   };
 
   # The manifest declares no actions, panes or events: the herdr side lives in

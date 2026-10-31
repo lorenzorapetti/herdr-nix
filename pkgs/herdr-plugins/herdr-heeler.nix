@@ -5,13 +5,13 @@
   buildNpmPackage,
   nodejs,
 }: let
-  version = "0.1.15";
+  version = "0.1.16";
 
   src = fetchFromGitHub {
     owner = "ZingerLittleBee";
     repo = "Heeler";
     rev = "v${version}";
-    hash = "sha256-AmsLQu+c023NJlzf3rXCp9F1kx/SGsnsGc7opGO79xc=";
+    hash = "sha256-j8NVkhqZzqyJUjldr0Fcuddz1fCz2iCix1tYcHWZdCg=";
   };
 
   # Upstream's [[build]] step runs `npm ci`, which `herdr plugin link` doesn't
@@ -20,7 +20,7 @@
     pname = "herdr-heeler-node-modules";
     inherit version src;
     sourceRoot = "${src.name}/plugin";
-    npmDepsHash = "sha256-iELFiNbViTcqknmbDH+utr8V7/6Jh8HLEA+LvfiOna8=";
+    npmDepsHash = "sha256-iqKtzJwxYTwlB/2s1QDWJCtgxTVuXIiv6xVosFiujgQ=";
 
     dontNpmBuild = true;
 
