@@ -7,19 +7,19 @@
   gnugrep,
   gnused,
 }: let
-  version = "0.17.0";
+  version = "0.18.2";
 
   src = fetchFromGitHub {
     owner = "uwuclxdy";
     repo = "clauth";
     rev = "v${version}";
-    hash = "sha256-hbiBVUMZ0RO1+JqohtlwJ+NpBOl/jOZpkVDdEHShuNs=";
+    hash = "sha256-jw4DX8P4cs3RnGzLjGwH/8FjBpwfCGog0EtU0AYNzKM=";
   };
 
   clauth = rustPlatform.buildRustPackage {
     pname = "clauth";
     inherit version src;
-    cargoHash = "sha256-A897WAfqn5YP09b1IKo8wV4avzzjNm6wUJ2tL6hHLE0=";
+    cargoHash = "sha256-oNrCb6+/1HmVp+dbcyCCO9ibVoshGhDvpOgDdVjAhLE=";
 
     # Dozens of the oauth and scheduler tests stall for minutes each in the
     # sandbox; the suite didn't finish within half an hour.

@@ -5,19 +5,19 @@
   buildGoModule,
   coreutils,
 }: let
-  version = "1.4.3";
+  version = "1.4.13";
 
   src = fetchFromGitHub {
     owner = "arronKler";
     repo = "pairfob";
     rev = "v${version}";
-    hash = "sha256-Om6f4Yz7g+fwg3EXTIi1r3rLm/oMnLFiJqqjF2hUZxY=";
+    hash = "sha256-PCrYyrAMyitQfguaIf2BmKfl1sLat2cXbzH6kyGS0DM=";
   };
 
   pairfob = buildGoModule {
     pname = "pairfob";
     inherit version src;
-    vendorHash = "sha256-qPDL6eIfLhgvbA4eSYYzOUOTNzXDpa5yu+NcEoovXpQ=";
+    vendorHash = "sha256-PdnbBMcuNaM8pVNQ64fbHu3r6//XtpqHWo+Um8Tqy8U=";
 
     subPackages = ["cmd/pairfob"];
     ldflags = ["-s" "-w" "-X main.version=${version}"];

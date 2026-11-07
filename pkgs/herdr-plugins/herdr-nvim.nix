@@ -7,13 +7,13 @@
   git,
   procps,
 }: let
-  version = "1.2.1";
+  version = "1.3.1";
 
   src = fetchFromGitHub {
     owner = "ChmaraX";
     repo = "herdr-nvim";
     rev = "v${version}";
-    hash = "sha256-EghtchK820sWZmq67qdHhKSWkLnG2CqLza/dmUqNNi0=";
+    hash = "sha256-/026mNSbhZIAMJeNdSsbi9vhUuQEfdjqI99QzKAHW6w=";
   };
 
   # Upstream downloads the release binary into bin/ from a [[build]] hook,
@@ -21,7 +21,7 @@
   herdr-nvim-bin = rustPlatform.buildRustPackage {
     pname = "herdr-nvim-bin";
     inherit version src;
-    cargoHash = "sha256-ncnRRclRvbHWHcx9UTCoFvZILRw7kUf+Ub7N1ZjQ0IA=";
+    cargoHash = "sha256-YhOprgqqWHV4b2Md93BRTdKNFyCrYFV3pm6gy/hyoDk=";
 
     nativeCheckInputs = [git procps];
     preCheck = ''
