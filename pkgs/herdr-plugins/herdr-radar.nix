@@ -6,13 +6,13 @@
 }:
 mkHerdrPlugin rec {
   pname = "herdr-radar";
-  version = "1.4.8";
+  version = "1.5.2";
 
   src = fetchFromGitHub {
     owner = "hhdebb";
     repo = "herdr-radar";
     rev = "v${version}";
-    hash = "sha256-vf8A7G94aC7zfjZ9KW944lzqwNssS3HS6DmRk/bQ+8o=";
+    hash = "sha256-/9+To9UWOVlyGYelftpxwsbn/ApASoByIwjm6tYx8v4=";
   };
 
   # No npm dependencies. The [[build]] hook writes radar's managed blocks into

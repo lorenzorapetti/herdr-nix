@@ -5,13 +5,13 @@
   buildGoModule,
   go_1_27,
 }: let
-  version = "0.17.4";
+  version = "0.17.6";
 
   src = fetchFromGitHub {
     owner = "permgps";
     repo = "herdr-telegram-agents";
     rev = "v${version}";
-    hash = "sha256-nRTQfx0PWIt30CtBmoVA/I40rgYwvxP4w+8wulqdgJI=";
+    hash = "sha256-G8dsPAIWwvMcJVfIWcN7+H9ULdR/DV6e28KGr2KEuVc=";
   };
 
   # Upstream downloads the release binary into bin/ from a [[build]] hook,
