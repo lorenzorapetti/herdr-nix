@@ -6,13 +6,13 @@
   bun,
   procps,
 }: let
-  version = "0.6.4";
+  version = "0.7.0";
 
   src = fetchFromGitHub {
     owner = "iurysza";
     repo = "herdr-tab-smart-rename";
     rev = "v${version}";
-    hash = "sha256-y8FXMPFWGbPv7dDAE0TfBwbpyD9RHkoKLb7ueCxSn0M=";
+    hash = "sha256-7t8/XOpw2ZqVy/5vSWwR4xPzQ+W6kxO8ZRZEier4g9w=";
   };
 
   # Upstream's [[build]] step runs `bun install --production`, which
@@ -20,7 +20,7 @@
   node-modules = fetchBunDeps {
     pname = "herdr-tab-smart-rename";
     inherit version src;
-    hash = "sha256-V52N97KBlMtinmqhB6oyFeQ1TtcrRll1p2oiwKmwg/A=";
+    hash = "sha256-CrJyc8Y3dcfXNyhQMiT7cO6GQ5F6ozSa4lQqLIVeJ0o=";
     installFlags = ["--production"];
   };
 in
