@@ -4,13 +4,13 @@
   fetchFromGitHub,
   buildGoModule,
 }: let
-  version = "0.14.0";
+  version = "0.22.2";
 
   src = fetchFromGitHub {
     owner = "kryptamine";
     repo = "herdr-auto-title";
     rev = "v${version}";
-    hash = "sha256-6BK43+a15nI21FaCPGmVjpy+J5ikRdk9J85TS47GvYI=";
+    hash = "sha256-ebLE7rkpENQJpGs4gYO2G96n29S6Jt5kQ2zk7JQ3WXk=";
   };
 
   # Upstream's [[build]] step runs `go build` into the plugin directory, which
@@ -18,7 +18,7 @@
   herdr-auto-title-bin = buildGoModule {
     pname = "herdr-auto-title-bin";
     inherit version src;
-    vendorHash = "sha256-QxFp1b7pf7bn3Hh0hyaj8ke5Z61N+WwjhHt3pFiapTs=";
+    vendorHash = "sha256-UfIpYaA2eIRl29fhi7ESEoHEsyiXmEZ4MO78T0Q6OCs=";
 
     meta.mainProgram = "herdr-auto-title";
   };

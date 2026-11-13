@@ -7,19 +7,19 @@
   gnugrep,
   gnused,
 }: let
-  version = "1.8.0";
+  version = "1.12.0";
 
   src = fetchFromGitHub {
     owner = "eugenioenko";
     repo = "ttt";
     rev = "v${version}";
-    hash = "sha256-ousuIOWk3TRvPB3cilTXHhhAia0Hn+MUykr7uotA7f8=";
+    hash = "sha256-Ne9FApvOq3RhlcTN7joHzdcNDra/3QJqtg5ZtDWcqL4=";
   };
 
   ttt = buildGoModule {
     pname = "ttt";
     inherit version src;
-    vendorHash = "sha256-DUyYhsMzjyhW2vtMRkSUKVBvcgJYZi5iUNVKw48l3+Q=";
+    vendorHash = "sha256-Snis8gmPqxuuO9+RJxEasHlUg5GVdV6GgNH4UTkCBvs=";
 
     subPackages = ["cmd/ttt"];
     ldflags = ["-s" "-w" "-X main.version=${version}"];
