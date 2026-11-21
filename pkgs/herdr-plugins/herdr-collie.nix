@@ -9,13 +9,13 @@
   coreutils,
   nodejs,
 }: let
-  version = "1.23.0";
+  version = "1.29.1";
 
   src = fetchFromGitHub {
     owner = "AltanS";
     repo = "collie";
     rev = "v${version}";
-    hash = "sha256-zN4MmuolOZ0sn19Ik89GgtXKDUTzIcQINK6DqZDpXgo=";
+    hash = "sha256-28PFQbQhT9HEH4fH4qoXBydPVGuSqpBFjZmhEXoUanE=";
   };
 
   node-modules = fetchBunDeps {
@@ -28,7 +28,7 @@
     pname = "herdr-collie-web";
     inherit version src;
     root = "web";
-    hash = "sha256-5KMvEoJpU2/feYPfSgfiPOdnFmc/0a97h9pFDivHvaU=";
+    hash = "sha256-XBuopauELV7nv39b60KM73jsczUEMfuDvQXDZj2T4J4=";
   };
 
   # Upstream's [[build]] step compiles bin/collie and the web UI with

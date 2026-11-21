@@ -11,13 +11,13 @@
 }:
 mkHerdrPlugin rec {
   pname = "herdr-automatic-rename";
-  version = "0.13.1";
+  version = "0.15.0";
 
   src = fetchFromGitHub {
     owner = "qu8n";
     repo = "herdr-automatic-rename";
     rev = "v${version}";
-    hash = "sha256-joPW6hvONbWbdChu/eUCjrnmIB/dBXIMxl76X0QVL5I=";
+    hash = "sha256-XZUXfq+tkanNia5L4ycrr62edJTdYojxwiJqXJ0VT64=";
   };
 
   runtimeInputs = [bash coreutils git gnugrep gnused jq];

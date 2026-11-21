@@ -12,13 +12,13 @@
 }:
 mkHerdrPlugin rec {
   pname = "herdr-lantern";
-  version = "0.17.8";
+  version = "0.17.12";
 
   src = fetchFromGitHub {
     owner = "aigorahub";
     repo = "herdr-lantern";
     rev = "v${version}";
-    hash = "sha256-b7uhM6UB7vWI7YO70RR/AzMTpJO49MuFxoMuYFppTjA=";
+    hash = "sha256-3mD/Ar+kHRwTfoFF6WUfbv0rd9j2GJXJLqFboQcpF+8=";
   };
 
   # The agent CLI it runs in the chat pane (claude, codex, pi, ...) is the

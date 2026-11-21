@@ -8,13 +8,13 @@
   curl,
   gawk,
 }: let
-  version = "0.5.22";
+  version = "0.5.24";
 
   src = fetchFromGitHub {
     owner = "senna-lang";
     repo = "herdr-agent-usage";
     rev = "v${version}";
-    hash = "sha256-cRDcEZyTIzEpmr1t73Hl4g3l+MjgA9YUVt6mwgy7zfk=";
+    hash = "sha256-vlVYd7LnFIjekTjJp9I/4Inoo9Jxz4nlfJCN5+kDomU=";
   };
 
   # Upstream's [[build]] step runs `go build` or downloads a release binary into
@@ -22,7 +22,7 @@
   usagebar = buildGoModule {
     pname = "usagebar";
     inherit version src;
-    vendorHash = "sha256-JP3q+6jFY7U80a6zS/3gEIWgmH+YkvUEsvOQa3rMWEA=";
+    vendorHash = "sha256-hbuaZ7QTyOb4OwBR9ZsSpzRLHGgC+0ooQ58Tc+bb62Y=";
 
     subPackages = ["cmd/usagebar"];
 

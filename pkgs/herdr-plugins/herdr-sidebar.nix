@@ -10,13 +10,13 @@
   git,
   python3,
 }: let
-  version = "0.15.1";
+  version = "0.16.0";
 
   src = fetchFromGitHub {
     owner = "alexarthurs";
     repo = "herdr-sidebar";
     rev = "v${version}";
-    hash = "sha256-6lHSzGKzh6ef6rQXy43BHZgIMhBC4YVs3tDTqW0pRzU=";
+    hash = "sha256-LUn6pk3rDcOyyvCRa6L9HpP04v4xNj5Wq78JYsAVNmE=";
   };
 
   # Upstream downloads the release binaries into target/release/ from a
@@ -26,7 +26,7 @@
     pname = "herdr-sidebar-bin";
     inherit version src;
     sourceRoot = "${src.name}/plugins/herdr-sidebar";
-    cargoHash = "sha256-5WgmUlLzuBAiQeIx8tgfCT3UDMuH18BQT/+nGL1uKpw=";
+    cargoHash = "sha256-kiEZXXbnCTxuwUDCoo07hGFWYHmSXeLWX+Uj/jS9Kzo=";
 
     nativeCheckInputs = [git];
     preCheck = ''
