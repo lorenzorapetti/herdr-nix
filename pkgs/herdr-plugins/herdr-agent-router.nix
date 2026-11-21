@@ -6,13 +6,13 @@
   coreutils,
   nodejs,
 }: let
-  version = "0.1.0";
+  version = "0.2.0";
 
   src = fetchFromGitHub {
     owner = "nidhi-singh02";
     repo = "agent-router";
     rev = "v${version}";
-    hash = "sha256-UO7w9UxXgUOvynutbnY9f4drPyuu56fiaRjUHwCsl+E=";
+    hash = "sha256-III+GpKwgylQrv3sFjzch4Z1MRluTO+k6Xop/CuASEg=";
   };
 
   # Upstream's [[build]] steps run `npm ci` and compile the router CLI, which
@@ -21,7 +21,7 @@
   build = buildNpmPackage {
     pname = "herdr-agent-router-build";
     inherit version src;
-    npmDepsHash = "sha256-JBHAXwe3xZ2dD9/9/cqHSHe6GheEO8zg8vcuNN1gBJw=";
+    npmDepsHash = "sha256-rFjQ6OZP7zrVMfxh9iE1kmyM2CFbrgPYmtNVcowLSdc=";
 
     installPhase = ''
       runHook preInstall

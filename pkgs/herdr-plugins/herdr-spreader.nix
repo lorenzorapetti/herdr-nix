@@ -4,13 +4,13 @@
   fetchFromGitHub,
   rustPlatform,
 }: let
-  version = "0.2.1";
+  version = "0.4.0";
 
   src = fetchFromGitHub {
     owner = "yuk1ty";
     repo = "herdr-spreader";
     rev = "v${version}";
-    hash = "sha256-nPuL1MUsMpgJYi0rPPBUdffp/SrI7T1fDkQBBVq/QZY=";
+    hash = "sha256-kDWorB27CUsEFwnYqQFqGOMPjCwNfez0HHOtdEO5jKE=";
   };
 
   # Upstream's [[build]] step runs `cargo build --release`, which
@@ -18,7 +18,7 @@
   herdr-spreader-bin = rustPlatform.buildRustPackage {
     pname = "herdr-spreader-bin";
     inherit version src;
-    cargoHash = "sha256-44CbUeR1OBm9oGUf+xTMPKCebTGcvrrDA6ZjskWm8Ug=";
+    cargoHash = "sha256-ONm2K3s+pMXMfZjMEfuIusFrTu+jHGoFrj57yTmh2c0=";
 
     meta.mainProgram = "herdr-spreader";
   };

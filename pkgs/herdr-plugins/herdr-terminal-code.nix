@@ -5,13 +5,13 @@
   fetchFromGitHub,
   makeWrapper,
 }: let
-  version = "0.4.3";
+  version = "0.4.6";
 
   src = fetchFromGitHub {
     owner = "zenbu-labs";
     repo = "terminal-code";
     rev = "v${version}";
-    hash = "sha256-AanxPsn7YE5MD46Nr3Tzdo2tg3/GNK3Yn/ZZxhZlW5M=";
+    hash = "sha256-p48vE+hyRq9TkoQmUEQ5TUQ4xul0x+2j1qmE6W+LyL4=";
   };
 
   prebuiltRelease = callPackage ./prebuilt-release.nix {};
@@ -57,10 +57,10 @@
     electron = true;
     url = target: "https://tode-releases.zenbu-labs.workers.dev/dl/stable/v${version}/tode-${target}.tar.gz";
     releaseHashes = {
-      x86_64-linux = "sha256-LgsSMhy4PDtCuEUW8punlhiRUxTEWawWJ1zDPpw0AFE=";
-      aarch64-linux = "sha256-cI7dX+dqspFUGOiLwe/lZUncNEahhkXRlNZzro1ggBw=";
-      x86_64-darwin = "sha256-FE/X0+JeU/1PGrrGhgzX9UXBMoAjrPvDaRtIjsm//3Q=";
-      aarch64-darwin = "sha256-6ikueIHvB2zNo8kAx+nd7JDoqADRtXS5MCwPEMNyqCc=";
+      x86_64-linux = "sha256-holerUm3BFvFTExhtk+Mr8Z6Rvsn7oQK/vsaKCcrEzg=";
+      aarch64-linux = "sha256-PlldlRCFrOV61x+uAOCzejvNeNrjYCqaw5ulja4+tm0=";
+      x86_64-darwin = "sha256-Rl2kHArPNloedKWo540qsLg8ersL/DhDbDAfOfawFKU=";
+      aarch64-darwin = "sha256-voOPCB/Fq5KD2GNhKo9HiA9wTOi7IGJA7UYMygjDz/s=";
     };
 
     nativeBuildInputs = [makeWrapper];
